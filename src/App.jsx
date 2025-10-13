@@ -1,19 +1,19 @@
-// App.jsx
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+// src/App.jsx
+import React from "react";
+import Header from "./components/Header";
 
-const Home = () => <h1 className="text-center mt-10 text-3xl font-bold">Welcome to Hero IO!</h1>
-const Apps = () => <h1 className="text-center mt-10 text-2xl">Apps Page</h1>
-const Installation = () => <h1 className="text-center mt-10 text-2xl">Installation Page</h1>
-
-function App() {
+const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/apps" element={<Apps />} />
-      <Route path="/installation" element={<Installation />} />
-    </Routes>
-  )
-}
+    <div className="flex flex-col min-h-screen">
+      {/* Header */}
+      <Header />
 
-export default App
+      {/* Page Content Placeholder */}
+      <main className="flex-1 p-4 text-center">
+        <h1 className="text-2xl font-semibold">Page content will appear here</h1>
+      </main>
+    </div>
+  );
+};
+
+export default App;
