@@ -2,7 +2,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
-import gitIcon from "../assets/git-ico.png"; // ✅ তোমার icon
+import gitIcon from "../assets/git-ico.png";
 
 const Header = () => {
   const menuItems = [
@@ -44,9 +44,11 @@ const Header = () => {
                 <NavLink
                   to={item.path}
                   className={({ isActive }) =>
-                    isActive
-                      ? "bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent underline font-semibold text-[16px]"
-                      : "text-black font-semibold text-[16px] hover:underline"
+                    `relative font-semibold text-[16px] leading-[19px] capitalize
+                    ${isActive ? "text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2]" : "text-black"}
+                    after:absolute after:-bottom-0.5 after:left-0 after:w-full after:h-0.5
+                    after:bg-gradient-to-r after:from-[#632EE3] after:to-[#9F62F2]
+                    after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100`
                   }
                 >
                   {item.name}
@@ -57,7 +59,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Center: Desktop Menu */}
+      {/* Desktop Menu */}
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-6">
           {menuItems.map((item) => (
@@ -65,9 +67,11 @@ const Header = () => {
               <NavLink
                 to={item.path}
                 className={({ isActive }) =>
-                  isActive
-                    ? "bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent underline font-semibold text-[16px]"
-                    : "text-black font-semibold text-[16px] hover:underline"
+                  `relative font-semibold text-[16px] leading-[19px] capitalize
+                  ${isActive ? "text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2]" : "text-black"}
+                  after:absolute after:-bottom-0.5 after:left-0 after:w-full after:h-0.5
+                  after:bg-gradient-to-r after:from-[#632EE3] after:to-[#9F62F2]
+                  after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100`
                 }
               >
                 {item.name}
@@ -77,7 +81,7 @@ const Header = () => {
         </ul>
       </div>
 
-      {/* ✅ Right: Contribute Button */}
+      {/* Contribute Button */}
       <div className="navbar-end">
         <a
           href="https://github.com/selimreza777/my-produva-app"
