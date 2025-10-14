@@ -2,40 +2,28 @@
 import React from "react";
 import googlePlay from "../assets/google-play.png";
 import appStore from "../assets/app-play.png";
+import heroImg from "../assets/hero.png"; // hero.png
 
 const Banner = () => {
   return (
     <section className="flex flex-col items-center justify-start text-center py-20 px-4 bg-[#f5f5f5]">
+      
       {/* Title */}
-      <h1
-        className="
-          text-[72px] sm:text-[60px] lg:text-[72px]
-          font-semibold
-          leading-[84px]
-          capitalize
-          max-w-[597px]
-        "
-      >
+      <h1 className="text-[72px] sm:text-[60px] lg:text-[72px] font-semibold leading-[84px] capitalize max-w-[597px]">
         We Build{" "}
         <span className="bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent">
           Productive Apps
         </span>
       </h1>
 
-      {/* Gap between title and subtitle */}
-      <div className="mt-[16px]" />
-
       {/* Subtitle */}
-      <p className="text-[20px] font-normal leading-[32px] text-[#627382] max-w-[1440px]">
+      <p className="mt-10 mb-8 text-[20px] font-normal leading-[32px] text-[#627382] max-w-[1440px]">
         At HERO.IO, we craft innovative apps designed to make everyday life simpler, smarter, and more exciting.<br />
         Our goal is to turn your ideas into digital experiences that truly make an impact.
       </p>
 
-      {/* Gap before buttons */}
-      <div className="mt-6" />
-
       {/* Buttons */}
-      <div className="flex flex-wrap gap-4 justify-center mt-4">
+      <div className="flex flex-wrap gap-4 justify-center mt-2">
         {/* Google Play */}
         <a
           href="#"
@@ -57,6 +45,15 @@ const Banner = () => {
             App Store
           </span>
         </a>
+      </div>
+
+      {/* Hero Image Section */}
+      <div className="mt-5 sm:mt-6 lg:mt-2">
+        <img
+          src={heroImg}
+          alt="Hero"
+          className="w-[300px] sm:w-[393px] lg:w-[800px] h-[150px] sm:h-[250px] lg:h-[500px] object-contain"
+        />
       </div>
     </section>
   );
