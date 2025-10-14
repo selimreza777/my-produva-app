@@ -1,16 +1,22 @@
-// src/App.jsx
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
+import Home from "./pages/Home";
 
 const App = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Header */}
+      {/* Navbar / Header */}
       <Header />
 
-      {/* Page Content Placeholder */}
-      <main className="flex-1 p-4 text-center">
-        <h1 className="text-2xl font-semibold">Page content will appear here</h1>
+      {/* Page Routes */}
+      <main className="flex-1">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* future routes */}
+          {/* <Route path="/courses" element={<Courses />} /> */}
+          {/* <Route path="/about" element={<About />} /> */}
+        </Routes>
       </main>
     </div>
   );
