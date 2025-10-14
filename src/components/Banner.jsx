@@ -8,12 +8,16 @@ const Banner = () => {
   return (
     <section className="flex flex-col items-center justify-start text-center py-20 px-4 bg-[#f5f5f5]">
       {/* Title */}
-      <h1 className="text-[40px] sm:text-[60px] lg:text-[72px] font-semibold leading-[48px] sm:leading-[72px] lg:leading-[84px] capitalize max-w-[597px]">
-        We Build{" "}
-        <span className="bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent">
-          Productive Apps
-        </span>
+      <h1 className="text-[40px] sm:text-[60px] lg:text-[72px] leading-[48px] sm:leading-[72px] lg:leading-[84px] text-center capitalize max-w-[597px]" style={{ fontFamily: "Inter", fontWeight: 700, opacity: 0.9 }}>
+        <span className="text-[#001931] font-bold">We Build </span>
+        <span className="bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent font-extrabold">
+          Productive
+        </span>{" "}
+        <span className="text-[#001931] font-bold">Apps</span>
       </h1>
+
+
+
 
 
       {/* Subtitle */}
