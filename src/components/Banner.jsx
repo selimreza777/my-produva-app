@@ -6,19 +6,15 @@ import heroImg from "../assets/hero.png";
 
 const Banner = () => {
   return (
-    <section className="flex flex-col items-center justify-start text-center py-20 px-4 bg-[#f5f5f5]">
-      {/* Title */}
-      <h1 className="text-[40px] sm:text-[60px] lg:text-[72px] leading-[48px] sm:leading-[72px] lg:leading-[84px] text-center capitalize max-w-[597px]" style={{ fontFamily: "Inter", fontWeight: 700, opacity: 0.9 }}>
+    <section className="flex flex-col items-center justify-start text-center px-4 bg-[#f5f5f5]">
+      {/* Hero Title */}
+      <h1 className="mt-20 text-[40px] sm:text-[60px] lg:text-[72px] leading-[48px] sm:leading-[72px] lg:leading-[84px] text-center capitalize max-w-[597px]" style={{ fontFamily: "Inter", fontWeight: 700, opacity: 0.9 }}>
         <span className="text-[#001931] font-bold">We Build </span>
         <span className="bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent font-extrabold">
           Productive
         </span>{" "}
         <span className="text-[#001931] font-bold">Apps</span>
       </h1>
-
-
-
-
 
       {/* Subtitle */}
       <p className="mt-10 mb-8 text-[20px] font-normal leading-[32px] text-[#627382] max-w-[1440px]">
@@ -63,7 +59,7 @@ const Banner = () => {
 
       {/* Trusted Section */}
       <div
-        className="w-full flex flex-col items-center justify-center py-16 lg:py-15 mt-0"
+        className="w-full flex flex-col items-center justify-center py-16 sm:py-16"
         style={{
           background:
             "linear-gradient(125.07deg, rgba(99, 46, 227, 1), rgba(159, 98, 242, 1) 100%)",

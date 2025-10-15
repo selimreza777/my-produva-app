@@ -1,0 +1,290 @@
+[
+  {
+    "id": 1,
+    "image": "/src/assets/demo-app-1.png",
+    "title": "ChatFlow",
+    "companyName": "TechVision",
+    "description": "Smart AI-powered messaging app for seamless communication.",
+    "size": 45,
+    "reviews": 2300,
+    "ratingAvg": 4.7,
+    "downloads": 500000,
+    "ratings": [
+      { "name": "1 star", "count": 50 },
+      { "name": "2 star", "count": 120 },
+      { "name": "3 star", "count": 300 },
+      { "name": "4 star", "count": 600 },
+      { "name": "5 star", "count": 1230 }
+    ]
+  },
+  {
+    "id": 2,
+    "image": "/src/assets/demo-app-2.png",
+    "title": "Taskify",
+    "companyName": "WorkHub Inc.",
+    "description": "Task management app that helps teams collaborate effectively.",
+    "size": 38,
+    "reviews": 1800,
+    "ratingAvg": 4.6,
+    "downloads": 420000,
+    "ratings": [
+      { "name": "1 star", "count": 60 },
+      { "name": "2 star", "count": 90 },
+      { "name": "3 star", "count": 200 },
+      { "name": "4 star", "count": 500 },
+      { "name": "5 star", "count": 950 }
+    ]
+  },
+  {
+    "id": 3,
+    "image": "/src/assets/demo-app-3.png",
+    "title": "FinTrack",
+    "companyName": "MoneyMate",
+    "description": "Manage your expenses and track your financial growth easily.",
+    "size": 52,
+    "reviews": 2750,
+    "ratingAvg": 4.8,
+    "downloads": 600000,
+    "ratings": [
+      { "name": "1 star", "count": 80 },
+      { "name": "2 star", "count": 100 },
+      { "name": "3 star", "count": 220 },
+      { "name": "4 star", "count": 700 },
+      { "name": "5 star", "count": 1650 }
+    ]
+  },
+  {
+    "id": 4,
+    "image": "/src/assets/demo-app-4.png",
+    "title": "HealthMate",
+    "companyName": "Wellness Pro",
+    "description": "Track workouts, meals, and health insights in one dashboard.",
+    "size": 60,
+    "reviews": 3100,
+    "ratingAvg": 4.9,
+    "downloads": 750000,
+    "ratings": [
+      { "name": "1 star", "count": 70 },
+      { "name": "2 star", "count": 90 },
+      { "name": "3 star", "count": 300 },
+      { "name": "4 star", "count": 800 },
+      { "name": "5 star", "count": 1840 }
+    ]
+  },
+  {
+    "id": 5,
+    "image": "/src/assets/demo-app-5.png",
+    "title": "EduLearn",
+    "companyName": "SmartEd Ltd.",
+    "description": "Interactive online learning app for students and educators.",
+    "size": 48,
+    "reviews": 1950,
+    "ratingAvg": 4.5,
+    "downloads": 300000,
+    "ratings": [
+      { "name": "1 star", "count": 40 },
+      { "name": "2 star", "count": 60 },
+      { "name": "3 star", "count": 180 },
+      { "name": "4 star", "count": 500 },
+      { "name": "5 star", "count": 1170 }
+    ]
+  },
+  {
+    "id": 6,
+    "image": "/src/assets/demo-app-6.png",
+    "title": "FitZone",
+    "companyName": "BodyFlex",
+    "description": "Personalized fitness training app with daily workout plans.",
+    "size": 41,
+    "reviews": 1600,
+    "ratingAvg": 4.4,
+    "downloads": 250000,
+    "ratings": [
+      { "name": "1 star", "count": 90 },
+      { "name": "2 star", "count": 110 },
+      { "name": "3 star", "count": 250 },
+      { "name": "4 star", "count": 400 },
+      { "name": "5 star", "count": 750 }
+    ]
+  },
+  {
+    "id": 7,
+    "image": "/src/assets/demo-app-1.png",
+    "title": "NoteEase",
+    "companyName": "SimpleSoft",
+    "description": "Minimalist note-taking app with cloud sync and dark mode.",
+    "size": 30,
+    "reviews": 1200,
+    "ratingAvg": 4.3,
+    "downloads": 210000,
+    "ratings": [
+      { "name": "1 star", "count": 70 },
+      { "name": "2 star", "count": 90 },
+      { "name": "3 star", "count": 220 },
+      { "name": "4 star", "count": 350 },
+      { "name": "5 star", "count": 470 }
+    ]
+  },
+  {
+    "id": 8,
+    "image": "/src/assets/demo-app-2.png",
+    "title": "TravelGo",
+    "companyName": "SkyRoute",
+    "description": "Find flights, hotels, and travel deals with smart search tools.",
+    "size": 65,
+    "reviews": 3200,
+    "ratingAvg": 4.8,
+    "downloads": 870000,
+    "ratings": [
+      { "name": "1 star", "count": 100 },
+      { "name": "2 star", "count": 150 },
+      { "name": "3 star", "count": 260 },
+      { "name": "4 star", "count": 700 },
+      { "name": "5 star", "count": 1990 }
+    ]
+  },
+  {
+    "id": 9,
+    "image": "/src/assets/demo-app-3.png",
+    "title": "Musicly",
+    "companyName": "TuneFlow",
+    "description": "Stream unlimited songs with AI-powered playlist generation.",
+    "size": 70,
+    "reviews": 4100,
+    "ratingAvg": 4.9,
+    "downloads": 950000,
+    "ratings": [
+      { "name": "1 star", "count": 90 },
+      { "name": "2 star", "count": 130 },
+      { "name": "3 star", "count": 300 },
+      { "name": "4 star", "count": 700 },
+      { "name": "5 star", "count": 2880 }
+    ]
+  },
+  {
+    "id": 10,
+    "image": "/src/assets/demo-app-4.png",
+    "title": "Foodify",
+    "companyName": "TasteHub",
+    "description": "Discover local restaurants and order food from your phone.",
+    "size": 55,
+    "reviews": 2800,
+    "ratingAvg": 4.6,
+    "downloads": 500000,
+    "ratings": [
+      { "name": "1 star", "count": 110 },
+      { "name": "2 star", "count": 150 },
+      { "name": "3 star", "count": 300 },
+      { "name": "4 star", "count": 700 },
+      { "name": "5 star", "count": 1540 }
+    ]
+  },
+  {
+    "id": 11,
+    "image": "/src/assets/demo-app-5.png",
+    "title": "Newsly",
+    "companyName": "MediaSmart",
+    "description": "Get daily world news updates with personalized categories.",
+    "size": 34,
+    "reviews": 1800,
+    "ratingAvg": 4.2,
+    "downloads": 230000,
+    "ratings": [
+      { "name": "1 star", "count": 70 },
+      { "name": "2 star", "count": 100 },
+      { "name": "3 star", "count": 220 },
+      { "name": "4 star", "count": 400 },
+      { "name": "5 star", "count": 1010 }
+    ]
+  },
+  {
+    "id": 12,
+    "image": "/src/assets/demo-app-6.png",
+    "title": "ShopEasy",
+    "companyName": "BuySmart",
+    "description": "Online shopping app with real-time price comparison tools.",
+    "size": 50,
+    "reviews": 3400,
+    "ratingAvg": 4.7,
+    "downloads": 800000,
+    "ratings": [
+      { "name": "1 star", "count": 120 },
+      { "name": "2 star", "count": 140 },
+      { "name": "3 star", "count": 250 },
+      { "name": "4 star", "count": 800 },
+      { "name": "5 star", "count": 2090 }
+    ]
+  },
+  {
+    "id": 13,
+    "image": "/src/assets/demo-app-1.png",
+    "title": "MindSpace",
+    "companyName": "CalmTech",
+    "description": "Meditation and relaxation app with breathing exercises.",
+    "size": 44,
+    "reviews": 1900,
+    "ratingAvg": 4.6,
+    "downloads": 260000,
+    "ratings": [
+      { "name": "1 star", "count": 60 },
+      { "name": "2 star", "count": 80 },
+      { "name": "3 star", "count": 210 },
+      { "name": "4 star", "count": 500 },
+      { "name": "5 star", "count": 1050 }
+    ]
+  },
+  {
+    "id": 14,
+    "image": "/src/assets/demo-app-2.png",
+    "title": "CodeMate",
+    "companyName": "DevSync",
+    "description": "Lightweight IDE for mobile developers with Git integration.",
+    "size": 85,
+    "reviews": 4100,
+    "ratingAvg": 4.8,
+    "downloads": 950000,
+    "ratings": [
+      { "name": "1 star", "count": 100 },
+      { "name": "2 star", "count": 140 },
+      { "name": "3 star", "count": 220 },
+      { "name": "4 star", "count": 800 },
+      { "name": "5 star", "count": 2840 }
+    ]
+  },
+  {
+    "id": 15,
+    "image": "/src/assets/demo-app-3.png",
+    "title": "WeatherX",
+    "companyName": "SkyTech",
+    "description": "Real-time weather updates, radar, and future forecasts.",
+    "size": 37,
+    "reviews": 1500,
+    "ratingAvg": 4.3,
+    "downloads": 210000,
+    "ratings": [
+      { "name": "1 star", "count": 80 },
+      { "name": "2 star", "count": 100 },
+      { "name": "3 star", "count": 180 },
+      { "name": "4 star", "count": 400 },
+      { "name": "5 star", "count": 740 }
+    ]
+  },
+  {
+    "id": 16,
+    "image": "/src/assets/demo-app-4.png",
+    "title": "SafeLock",
+    "companyName": "SecureTech",
+    "description": "Password manager with biometric authentication and vault.",
+    "size": 62,
+    "reviews": 3000,
+    "ratingAvg": 4.9,
+    "downloads": 920000,
+    "ratings": [
+      { "name": "1 star", "count": 70 },
+      { "name": "2 star", "count": 90 },
+      { "name": "3 star", "count": 200 },
+      { "name": "4 star", "count": 500 },
+      { "name": "5 star", "count": 2140 }
+    ]
+  }
+]
