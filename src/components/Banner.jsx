@@ -28,7 +28,9 @@ const Banner = () => {
       {/* Buttons */}
       <div className="flex flex-wrap gap-4 justify-center mt-2">
         <a
-          href="#"
+          href="https://play.google.com/store/apps" // Google Play Store link
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 px-6 py-3 border border-gray-300 rounded-[4px] h-[56px] w-[200px] transition hover:opacity-90"
         >
           <img src={googlePlay} alt="Google Play" className="w-8 h-8" />
@@ -38,7 +40,9 @@ const Banner = () => {
         </a>
 
         <a
-          href="#"
+          href="https://www.apple.com/app-store/" // App Store link
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 px-6 py-3 border border-gray-300 rounded-[4px] h-[56px] w-[200px] transition hover:opacity-90"
         >
           <img src={appStore} alt="App Store" className="w-8 h-8" />
