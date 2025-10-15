@@ -5,7 +5,7 @@ import appsData from "../data/appsData.json";
 
 const TopApps = () => {
   const navigate = useNavigate();
-  const topApps = appsData.slice(0, 8);
+  const topApps = appsData.slice(0, 8); // first 8 apps
 
   return (
     <section className="py-16 bg-[#F8F6FF]">
@@ -19,14 +19,14 @@ const TopApps = () => {
         </p>
 
         {/* Grid for App Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center gap-8">
           {topApps.map((app) => (
             <div
               key={app.id}
               onClick={() => navigate(`/appdetails/${app.id}`)}
-              className="flex flex-col justify-start items-center bg-white border border-gray-200 rounded-md shadow-sm hover:shadow-md cursor-pointer transition-all duration-300 w-full h-[435px]"
+              className="flex flex-col justify-start items-center bg-white border border-gray-200 rounded-md shadow-sm hover:shadow-md cursor-pointer transition-all duration-300 w-[348px] h-[435px]"
             >
-              {/* App Image with padding */}
+              {/* App Image with 16px padding */}
               <div className="mt-4 px-4 w-full h-[316px] flex items-center justify-center">
                 <img
                   src={app.image}
@@ -52,13 +52,18 @@ const TopApps = () => {
           ))}
         </div>
 
-        {/* Show All Button */}
-        <button
-          onClick={() => navigate("/allapps")}
-          className="mt-10 px-6 py-3 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-700 transition"
-        >
-          Show All
-        </button>
+        {/* Show All Button centered */}
+        <div className="flex justify-center mt-10">
+          <button
+            onClick={() => navigate("/allapps")}
+            className="w-[145px] h-[48px] flex justify-center items-center rounded-md bg-gradient-to-br from-[#632EE3] to-[#9F62F2] px-4 py-3"
+          >
+            <span className="font-inter font-semibold text-[16px] leading-[100%] text-white capitalize">
+              Show All
+            </span>
+          </button>
+        </div>
+
       </div>
     </section>
   );
