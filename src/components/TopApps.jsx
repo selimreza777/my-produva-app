@@ -25,7 +25,7 @@ const TopApps = () => {
             <div
               key={app.id}
               onClick={() => navigate(`/appdetails/${app.id}`)}
-              className="flex flex-col justify-start items-center bg-white border border-gray-200 rounded-md shadow-sm hover:shadow-md cursor-pointer transition-all duration-300 w-full h-[435px]"
+              className="flex flex-col justify-start items-center bg-white border border-gray-200 rounded-md shadow-sm hover:shadow-md cursor-pointer transition-all duration-300 w-full h-[435px] transform hover:-translate-y-2"
             >
               {/* App Image with 16px padding */}
               <div className="mt-4 px-4 w-full h-[316px] flex items-center justify-center">
@@ -56,7 +56,7 @@ const TopApps = () => {
         {/* Show All Button centered */}
         <div className="flex justify-center mt-10">
           <button
-            onClick={() => navigate("/allapps")} // Added navigation
+            onClick={() => navigate("/allapps")}
             className="w-[145px] h-[48px] flex justify-center items-center rounded-md bg-gradient-to-br from-[#632EE3] to-[#9F62F2] px-4 py-3"
           >
             <span className="font-inter font-semibold text-[16px] leading-[100%] text-white capitalize">
