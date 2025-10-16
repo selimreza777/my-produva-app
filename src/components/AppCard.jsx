@@ -1,40 +1,45 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
-import demo1 from "../assets/demo-app-1.png";
-import demo2 from "../assets/demo-app-2.png";
-import demo3 from "../assets/demo-app-3.png";
-import demo4 from "../assets/demo-app-4.png";
-import demo5 from "../assets/demo-app-5.png";
-import demo6 from "../assets/demo-app-6.png";
-
-const images = {
-  "demo-app-1.png": demo1,
-  "demo-app-2.png": demo2,
-  "demo-app-3.png": demo3,
-  "demo-app-4.png": demo4,
-  "demo-app-5.png": demo5,
-  "demo-app-6.png": demo6,
-};
+import downloadIcon from "../assets/download-ico.png";
+import ratingIcon from "../assets/rating-ico.png";
 
 const AppCard = ({ app }) => {
   const navigate = useNavigate();
+
   return (
     <div
-      onClick={() => navigate(`/app/${app.id}`)}
-      className="cursor-pointer bg-white rounded-2xl shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 p-5"
+      onClick={() => navigate(`/appdetails/${app.id}`)}
+      className="flex flex-col justify-start items-center bg-white border border-gray-200 rounded-md shadow-sm hover:shadow-md cursor-pointer transition-all duration-300 w-full h-[435px] transform hover:-translate-y-2"
     >
-      <img
-        src={images[app.image]}
-        alt={app.title}
-        className="w-full h-[180px] object-contain mb-4"
-      />
-      <h3 className="text-lg font-semibold text-[#001931]">{app.title}</h3>
-      <p className="text-sm text-gray-500 mb-2">{app.companyName}</p>
+      <div className="mt-4 px-4 w-full h-[316px] flex items-center justify-center">
+        <img
+          src={app.image}
+          alt={app.title}
+          className="w-full h-full object-cover rounded-md"
+        />
+      </div>
 
-      <div className="flex justify-between text-sm text-gray-600">
-        <span>⭐ {app.ratingAvg}</span>
-        <span>{app.downloads.toLocaleString()}+</span>
+      <div className="w-full text-left p-4 flex flex-col justify-between flex-1">
+        <div>
+          <h3 className="text-lg font-semibold text-gray-800 truncate">
+            {app.title}
+          </h3>
+          <p className="text-gray-500 text-sm">{app.companyName}</p>
+        </div>
+
+        <div className="flex items-center justify-between text-sm text-gray-600">
+          <button className="flex items-center justify-center w-[69px] h-[31px] gap-2 px-2 rounded-[4px] bg-[rgba(241,245,232,1)] text-[#00D390] font-inter font-medium text-[16px] leading-[100%] capitalize">
+            <img src={downloadIcon} alt="Download" className="w-4 h-4" />
+            {app.downloads}
+          </button>
+
+          <div className="inline-flex items-center justify-center h-[31px] gap-2 px-2 rounded-[4px] bg-[rgba(255,240,225,1)]">
+            <img src={ratingIcon} alt="Rating" className="w-4 h-4" />
+            <span className="text-[#FF8811] font-medium text-[16px] leading-[100%]">
+              {app.ratingAvg}
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );

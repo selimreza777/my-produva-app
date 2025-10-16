@@ -1,9 +1,8 @@
-// src/components/TopApps.jsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import appsData from "../data/appsData.json";
 import downloadIcon from "../assets/download-ico.png";
-import ratingIcon from "../assets/rating-ico.png"; // ✅ add this
+import ratingIcon from "../assets/rating-ico.png";
 
 const TopApps = () => {
   const navigate = useNavigate();
@@ -19,6 +18,7 @@ const TopApps = () => {
           Explore the most downloaded and highly rated apps this week.
         </p>
 
+        {/* App Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 justify-start">
           {topApps.map((app) => (
             <div
@@ -39,7 +39,6 @@ const TopApps = () => {
                   <h3 className="text-lg font-semibold text-gray-800 truncate">
                     {app.title}
                   </h3>
-                  
                 </div>
 
                 <div className="flex items-center justify-between text-sm text-gray-600">
@@ -50,26 +49,22 @@ const TopApps = () => {
                     {app.downloads}
                   </button>
 
-                  {/* Rating icon + number styled like Primary Button_2 */}
                   <div className="inline-flex items-center justify-center h-[31px] gap-2 px-2 rounded-[4px] bg-[rgba(255,240,225,1)]">
-                    <img src={ratingIcon} alt="Rating" className="w-4 h-4" /> {/* 16px × 16px */}
-                    <span className="w-[16px] h-[16px] text-[#FF8811] font-medium text-[16px] leading-[100%]">
+                    <img src={ratingIcon} alt="Rating" className="w-4 h-4" />
+                    <span className="text-[#FF8811] font-medium text-[16px] leading-[100%]">
                       {app.ratingAvg}
                     </span>
                   </div>
-
-
-
-
                 </div>
               </div>
             </div>
           ))}
         </div>
 
+        {/* ✅ Fixed: Go to Apps Page */}
         <div className="flex justify-center mt-10">
           <button
-            onClick={() => navigate("/allapps")}
+            onClick={() => navigate("/apps")}
             className="w-[145px] h-[48px] flex justify-center items-center rounded-md bg-gradient-to-br from-[#632EE3] to-[#9F62F2] px-4 py-3"
           >
             <span className="font-inter font-semibold text-[16px] leading-[100%] text-white capitalize">

@@ -1,14 +1,11 @@
 import React from "react";
 import Banner from "../components/Banner";
-import TopApps from "../components/TopApps"; // Trending Apps section
+import TopApps from "../components/TopApps";
 
 const Home = () => {
   return (
-    <div>
-      {/* Hero + Trusted Section */}
+    <div className="flex flex-col">
       <Banner />
-
-      {/* Trending / Top Apps Section */}
       <TopApps />
     </div>
   );
