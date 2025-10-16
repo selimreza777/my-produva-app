@@ -11,6 +11,7 @@ const App = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
+    
 
       {/* ✅ Global scroll-to-top on every route change */}
       <ScrollToTop />
