@@ -109,7 +109,7 @@
   },
   {
     "id": 7,
-    "image": "/src/assets/demo-app-1.png",
+    "image": "/src/assets/demo-app-7.png",
     "title": "NoteEase: Lite",
     "companyName": "SimpleSoft",
     "description": "Minimalist note-taking app with cloud sync and dark mode.",
@@ -127,7 +127,7 @@
   },
   {
     "id": 8,
-    "image": "/src/assets/demo-app-2.png",
+    "image": "/src/assets/demo-app-8.png",
     "title": "TravelGo - Explore",
     "companyName": "SkyRoute",
     "description": "Find flights, hotels, and travel deals with smart search tools.",
@@ -145,7 +145,7 @@
   },
   {
     "id": 9,
-    "image": "/src/assets/demo-app-3.png",
+    "image": "/src/assets/demo-app-9.png",
     "title": "Musicly: Beat",
     "companyName": "TuneFlow",
     "description": "Stream unlimited songs with AI-powered playlist generation.",
@@ -163,7 +163,7 @@
   },
   {
     "id": 10,
-    "image": "/src/assets/demo-app-4.png",
+    "image": "/src/assets/demo-app-10.png",
     "title": "Foodify - Taste",
     "companyName": "TasteHub",
     "description": "Discover local restaurants and order food from your phone.",
@@ -181,7 +181,7 @@
   },
   {
     "id": 11,
-    "image": "/src/assets/demo-app-5.png",
+    "image": "/src/assets/demo-app-11.png",
     "title": "Newsly: Daily",
     "companyName": "MediaSmart",
     "description": "Get daily world news updates with personalized categories.",
@@ -199,7 +199,7 @@
   },
   {
     "id": 12,
-    "image": "/src/assets/demo-app-6.png",
+    "image": "/src/assets/demo-app-12.png",
     "title": "ShopEasy - Smart",
     "companyName": "BuySmart",
     "description": "Online shopping app with real-time price comparison tools.",
@@ -217,7 +217,7 @@
   },
   {
     "id": 13,
-    "image": "/src/assets/demo-app-1.png",
+    "image": "/src/assets/demo-app-13.png",
     "title": "MindSpace: Calm",
     "companyName": "CalmTech",
     "description": "Meditation and relaxation app with breathing exercises.",
@@ -235,7 +235,7 @@
   },
   {
     "id": 14,
-    "image": "/src/assets/demo-app-2.png",
+    "image": "/src/assets/demo-app-14.png",
     "title": "CodeMate - Dev",
     "companyName": "DevSync",
     "description": "Lightweight IDE for mobile developers with Git integration.",
@@ -253,7 +253,7 @@
   },
   {
     "id": 15,
-    "image": "/src/assets/demo-app-3.png",
+    "image": "/src/assets/demo-app-15.png",
     "title": "WeatherX: Sky",
     "companyName": "SkyTech",
     "description": "Real-time weather updates, radar, and future forecasts.",
@@ -271,7 +271,7 @@
   },
   {
     "id": 16,
-    "image": "/src/assets/demo-app-4.png",
+    "image": "/src/assets/demo-app-16.png",
     "title": "SafeLock - Vault",
     "companyName": "SecureTech",
     "description": "Password manager with biometric authentication and vault.",
