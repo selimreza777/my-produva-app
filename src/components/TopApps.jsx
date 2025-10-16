@@ -39,9 +39,7 @@ const TopApps = () => {
                   <h3 className="text-lg font-semibold text-gray-800 truncate">
                     {app.title}
                   </h3>
-                  <p className="text-sm text-gray-500 mb-2">
-                    {app.companyName}
-                  </p>
+                  
                 </div>
 
                 <div className="flex items-center justify-between text-sm text-gray-600">
