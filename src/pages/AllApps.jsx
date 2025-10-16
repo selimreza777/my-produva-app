@@ -24,7 +24,6 @@ const AllApps = () => {
   };
 
   return (
-    // ✅ Add background color here
     <div className="bg-[#F8F6FF] min-h-screen">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 py-10">
         {/* Apps Found + Search Bar */}
@@ -60,7 +59,7 @@ const AllApps = () => {
 
         {/* App Cards or No Apps Found */}
         {filteredApps.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pb-16">
             {filteredApps.map((app) => (
               <AppCard key={app.id} app={app} />
             ))}

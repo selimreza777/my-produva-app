@@ -1,3 +1,4 @@
+// src/components/TopApps.jsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import appsData from "../data/appsData.json";
@@ -10,7 +11,7 @@ const TopApps = () => {
 
   return (
     <section className="py-16 bg-[#F8F6FF]">
-      <div className="max-w-[1440px] mx-auto px-5 text-center">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 text-center">
         <h2 className="text-[48px] font-bold leading-[100%] text-[#001931] capitalize mb-3 font-inter">
           Trending Apps
         </h2>
@@ -42,9 +43,7 @@ const TopApps = () => {
                 </div>
 
                 <div className="flex items-center justify-between text-sm text-gray-600">
-                  <button
-                    className="flex items-center justify-center w-[69px] h-[31px] gap-2 px-2 rounded-[4px] bg-[rgba(241,245,232,1)] text-[#00D390] font-inter font-medium text-[16px] leading-[100%] capitalize"
-                  >
+                  <button className="flex items-center justify-center w-[69px] h-[31px] gap-2 px-2 rounded-[4px] bg-[rgba(241,245,232,1)] text-[#00D390] font-inter font-medium text-[16px] leading-[100%] capitalize">
                     <img src={downloadIcon} alt="Download" className="w-4 h-4" />
                     {app.downloads}
                   </button>
@@ -61,7 +60,7 @@ const TopApps = () => {
           ))}
         </div>
 
-        {/* ✅ Fixed: Go to Apps Page */}
+        {/* Go to Apps Page */}
         <div className="flex justify-center mt-10">
           <button
             onClick={() => navigate("/apps")}

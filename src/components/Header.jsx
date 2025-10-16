@@ -12,7 +12,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="navbar bg-base-100 px-4 lg:px-20">
+    <header className="navbar bg-base-100 px-4 lg:px-25">
       {/* Left: Logo */}
       <div className="navbar-start flex items-center gap-2">
         <NavLink to="/" className="flex items-center gap-2">
