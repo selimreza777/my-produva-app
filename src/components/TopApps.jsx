@@ -9,7 +9,7 @@ const TopApps = () => {
 
   return (
     <section className="py-16 bg-[#F8F6FF]">
-      {/* Page container with left/right padding 80px */}
+      {/* Page container with left/right padding */}
       <div className="max-w-[1440px] mx-auto px-5 text-center">
         {/* Section Title */}
         <h2 className="text-[48px] font-bold leading-[100%] text-[#001931] capitalize mb-3 font-inter">
@@ -20,7 +20,7 @@ const TopApps = () => {
         </p>
 
         {/* Grid for App Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 justify-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 justify-start">
           {topApps.map((app) => (
             <div
               key={app.id}
