@@ -1,16 +1,15 @@
-// src/components/AppCard.jsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import downloadIcon from "../assets/download-ico.png";
 import ratingIcon from "../assets/rating-ico.png";
 
-const AppCard = ({ app, showSubtitle = true }) => {
+const AppCard = ({ app }) => {
   const navigate = useNavigate();
 
   return (
     <div
       onClick={() => navigate(`/appdetails/${app.id}`)}
-      className="flex flex-col justify-start items-center bg-white border border-gray-200 rounded-md shadow-sm hover:shadow-md cursor-pointer transition-all duration-300 w-full h-[435px] sm:h-[435px] transform hover:-translate-y-2"
+      className="flex flex-col justify-start items-center bg-white border border-gray-200 rounded-md shadow-sm hover:shadow-md cursor-pointer transition-all duration-300 w-full h-[435px] transform hover:-translate-y-2"
     >
       <div className="mt-4 px-4 w-full h-[316px] flex items-center justify-center">
         <img
@@ -21,17 +20,13 @@ const AppCard = ({ app, showSubtitle = true }) => {
       </div>
 
       <div className="w-full text-left p-4 flex flex-col justify-between flex-1">
-        <h3 className="text-lg font-semibold text-gray-800 truncate">
-          {app.title}
-        </h3>
+        <div>
+          <h3 className="text-lg font-semibold text-gray-800 truncate">
+            {app.title}
+          </h3>
+        </div>
 
-        {showSubtitle && (
-          <div className="text-sm text-gray-600 mt-2">
-            {/* Optional subtitle section, keep blank or add if needed */}
-          </div>
-        )}
-
-        <div className="flex items-center justify-between text-sm text-gray-600 mt-2">
+        <div className="flex items-center justify-between text-sm text-gray-600">
           <button className="flex items-center justify-center w-[69px] h-[31px] gap-2 px-2 rounded-[4px] bg-[rgba(241,245,232,1)] text-[#00D390] font-inter font-medium text-[16px] leading-[100%] capitalize">
             <img src={downloadIcon} alt="Download" className="w-4 h-4" />
             {app.downloads}

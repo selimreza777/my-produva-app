@@ -1,13 +1,10 @@
-// src/pages/AllApps.jsx
 import React, { useState, useEffect } from "react";
 import { CiSearch } from "react-icons/ci";
-import { useNavigate } from "react-router-dom";
-import AppCard from "../components/AppCard";
 import appsData from "../data/appsData.json";
+import AppCard from "../components/AppCard";
 
 const AllApps = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -19,7 +16,6 @@ const AllApps = () => {
 
   const handleShowAll = () => {
     setSearchTerm("");
-    navigate("/apps");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -57,7 +53,7 @@ const AllApps = () => {
           </>
         )}
 
-        {/* App Cards or No Apps Found */}
+        {/* App Cards */}
         {filteredApps.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pb-16">
             {filteredApps.map((app) => (
