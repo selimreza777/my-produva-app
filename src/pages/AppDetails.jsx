@@ -30,7 +30,7 @@ const AppDetails = () => {
     <div className="min-h-screen bg-[#F8F6FF] flex flex-col">
       <ToastContainer />
 
-      <div className="px-4 sm:px-[100px] py-15 sm:py-2 flex-1">
+      <div className="px-4 sm:px-[100px] py-15 flex-1">
         {/* App Info Section */}
         <div className="flex flex-col lg:flex-row gap-10 mb-12">
           {/* App Image */}
@@ -152,8 +152,8 @@ const AppDetails = () => {
         </div>
 
         {/* App Description */}
-        <div className="max-w-full h-[560px] pl-4 pr-4">
-          <h2 className="text-xl sm:text-2xl font-bold text-[#001931] mb-4">
+        <div className="max-w-full h-[560px] pl-4 pr-4 sm:pt-6">
+          <h2 className="text-xl sm:text-2xl font-bold text-[#001931] mb-6">
             Description
           </h2>
           <div
