@@ -1,9 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import appsData from "../data/appsData.json";
 import AppCard from "../components/AppCard";
 
 const TopApps = () => {
+  const navigate = useNavigate();
   const topApps = appsData.slice(0, 8);
+
+  const handleShowAll = () => {
+    navigate("/apps"); // navigates smoothly using React Router
+    window.scrollTo({ top: 0, behavior: "smooth" }); // smooth scroll to top
+  };
 
   return (
     <section className="py-16 bg-[#F8F6FF]">
@@ -23,7 +30,7 @@ const TopApps = () => {
 
         <div className="flex justify-center mt-10">
           <button
-            onClick={() => window.location.href = "/apps"}
+            onClick={handleShowAll}
             className="w-[145px] h-[48px] flex justify-center items-center rounded-md bg-gradient-to-br from-[#632EE3] to-[#9F62F2] px-4 py-3"
           >
             <span className="font-inter font-semibold text-[16px] leading-[100%] text-white capitalize">
