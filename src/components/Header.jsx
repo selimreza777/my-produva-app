@@ -6,10 +6,11 @@ import gitIcon from "../assets/git-ico.png";
 
 const Header = () => {
   const menuItems = [
-    { name: "Home", path: "/" },
-    { name: "Apps", path: "/apps" },
-    { name: "Installation", path: "/installation" },
-  ];
+  { name: "Home", path: "/" },
+  { name: "Apps", path: "/apps" },
+  { name: "Installation", path: "/my-installation" }, // ✅ Update path
+];
+
 
   return (
     <header className="navbar bg-base-100 px-4 lg:px-25">
