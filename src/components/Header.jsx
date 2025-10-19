@@ -1,16 +1,23 @@
-// src/components/Header.jsx
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 import gitIcon from "../assets/git-ico.png";
 
 const Header = () => {
-  const menuItems = [
-  { name: "Home", path: "/" },
-  { name: "Apps", path: "/apps" },
-  { name: "Installation", path: "/my-installation" }, // ✅ Update path
-];
+  const location = useLocation(); // ✅ get current path
 
+  const menuItems = [
+    { name: "Home", path: "/" },
+    { name: "Apps", path: "/apps" },
+    { name: "Installation", path: "/my-installation", altPaths: ["/installation"] }, // altPaths allows multiple paths
+  ];
+
+  const isActive = (item) => {
+    if (item.altPaths) {
+      return [item.path, ...item.altPaths].includes(location.pathname);
+    }
+    return location.pathname === item.path;
+  };
 
   return (
     <header className="navbar bg-base-100 px-4 lg:px-25">
@@ -44,13 +51,8 @@ const Header = () => {
               <li key={item.name}>
                 <NavLink
                   to={item.path}
-                  className={({ isActive }) =>
-                    `relative font-semibold text-[16px] leading-[19px] capitalize
-                    ${isActive ? "text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2]" : "text-black"}
-                    after:absolute after:-bottom-0.5 after:left-0 after:w-full after:h-0.5
-                    after:bg-gradient-to-r after:from-[#632EE3] after:to-[#9F62F2]
-                    after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100`
-                  }
+                  className={`relative font-semibold text-[16px] leading-[19px] capitalize
+                  ${isActive(item) ? "text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2]" : "text-black"}`}
                 >
                   {item.name}
                 </NavLink>
@@ -67,13 +69,8 @@ const Header = () => {
             <li key={item.name}>
               <NavLink
                 to={item.path}
-                className={({ isActive }) =>
-                  `relative font-semibold text-[16px] leading-[19px] capitalize
-                  ${isActive ? "text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2]" : "text-black"}
-                  after:absolute after:-bottom-0.5 after:left-0 after:w-full after:h-0.5
-                  after:bg-gradient-to-r after:from-[#632EE3] after:to-[#9F62F2]
-                  after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100`
-                }
+                className={`relative font-semibold text-[16px] leading-[19px] capitalize
+                ${isActive(item) ? "text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2]" : "text-black"}`}
               >
                 {item.name}
               </NavLink>

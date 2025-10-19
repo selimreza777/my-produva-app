@@ -1,49 +1,42 @@
 // src/App.jsx
-import React, { useState, useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+
+// Import pages
 import Home from "./pages/Home";
 import AllApps from "./pages/AllApps";
 import AppDetails from "./pages/AppDetails";
 import MyInstallation from "./pages/MyInstallation";
 import ErrorPage from "./pages/ErrorPage";
-import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
-  const location = useLocation(); // ✅ Detect route changes
-  const [loading, setLoading] = useState(false);
-
-  // Show loading animation briefly on route change
-  useEffect(() => {
-    setLoading(true);
-    const timer = setTimeout(() => setLoading(false), 700); // 700ms loading
-    return () => clearTimeout(timer);
-  }, [location]);
-
   return (
-    <div className="flex flex-col min-h-screen bg-[#F8F6FF]">
+    <div className="flex flex-col min-h-screen bg-gray-50 text-gray-900 font-inter">
+      {/* Header */}
       <Header />
-      <ScrollToTop />
 
-      {loading ? (
-        <div className="flex-1 flex justify-center items-center">
-          <div className="w-12 h-12 border-4 border-gray-300 border-t-[#7b43e9] rounded-full animate-spin"></div>
-        </div>
-      ) : (
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/apps" element={<AllApps />} />
-            <Route path="/appdetails/:id" element={<AppDetails />} />
-            <Route path="/my-installation" element={<MyInstallation />} /> {/* Added */}
-            <Route path="*" element={<ErrorPage />} />
-          </Routes>
-        </main>
-      )}
+      {/* Main Content */}
+      <main className="flex-1 container mx-auto px-4 py-6">
+        <Routes>
+          {/* Home Routes */}
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
 
-      <Footer />
+          {/* Apps Page */}
+          <Route path="/apps" element={<AllApps />} />
+
+          {/* App Details */}
+          <Route path="/appdetails/:id" element={<AppDetails />} />
+
+          {/* ✅ Installation Pages */}
+          <Route path="/installation" element={<MyInstallation />} />
+          <Route path="/my-installation" element={<MyInstallation />} />
+
+          {/* ❌ 404 Page */}
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </main>
     </div>
   );
 };
