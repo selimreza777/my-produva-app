@@ -1,7 +1,8 @@
 // src/App.jsx
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
+import Footer from "./components/Footer"; // ✅ Import your Footer
 
 // Import pages
 import Home from "./pages/Home";
@@ -29,14 +30,17 @@ const App = () => {
           {/* App Details */}
           <Route path="/appdetails/:id" element={<AppDetails />} />
 
-          {/* ✅ Installation Pages */}
+          {/* Installation Pages */}
           <Route path="/installation" element={<MyInstallation />} />
           <Route path="/my-installation" element={<MyInstallation />} />
 
-          {/* ❌ 404 Page */}
+          {/* 404 Page */}
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </main>
+
+      {/* ✅ Footer */}
+      <Footer />
     </div>
   );
 };
