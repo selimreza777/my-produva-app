@@ -3,12 +3,17 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import downloadIcon from "../assets/download-ico.png";
 import starIcon from "../assets/rating-ico.png";
+import { IoCaretDownSharp } from "react-icons/io5";
+import { motion } from "framer-motion";
 
 const MyInstallation = () => {
   const [installedApps, setInstalledApps] = useState([]);
+  const [sortedApps, setSortedApps] = useState([]);
   const [loading, setLoading] = useState(true);
   const [sortOrder, setSortOrder] = useState("high-low");
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
+  // Load installed apps from localStorage
   const loadInstalledApps = () => {
     const apps = JSON.parse(localStorage.getItem("installedApps")) || [];
     setInstalledApps(apps);
@@ -19,12 +24,24 @@ const MyInstallation = () => {
     loadInstalledApps();
     const timer = setTimeout(() => setLoading(false), 500);
     window.addEventListener("storage", loadInstalledApps);
-
     return () => {
       clearTimeout(timer);
       window.removeEventListener("storage", loadInstalledApps);
     };
   }, []);
+
+  // Helper to parse "downloads" string like "15M" into number 15
+  const parseDownloads = (d) => Number(d.replace("M", ""));
+
+  // Sort apps whenever installedApps or sortOrder changes
+  useEffect(() => {
+    const sorted = [...installedApps].sort((a, b) => {
+      const aNum = parseDownloads(a.downloads);
+      const bNum = parseDownloads(b.downloads);
+      return sortOrder === "high-low" ? bNum - aNum : aNum - bNum;
+    });
+    setSortedApps(sorted);
+  }, [installedApps, sortOrder]);
 
   const handleUninstall = (id) => {
     const updatedApps = installedApps.filter((app) => app.id !== id);
@@ -33,11 +50,10 @@ const MyInstallation = () => {
     toast.success("App uninstalled successfully!");
   };
 
-  const handleSort = (e) => setSortOrder(e.target.value);
-
-  const sortedApps = [...installedApps].sort((a, b) =>
-    sortOrder === "high-low" ? b.downloads - a.downloads : a.downloads - b.downloads
-  );
+  const handleSortChange = (order) => {
+    setSortOrder(order);
+    setDropdownOpen(false);
+  };
 
   if (loading)
     return (
@@ -68,33 +84,51 @@ const MyInstallation = () => {
         </p>
       </div>
 
-      {/* Apps Found + Sort Button */}
-      <div className="flex justify-between items-center mb-6 w-full max-w-[1440px] mx-auto px-4 sm:px-10">
+      {/* Apps Found + Sort Dropdown */}
+      <div className="flex justify-between items-center mb-6 w-full max-w-[1440px] mx-auto px-4 sm:px-10 relative">
         <p className="text-[#001931] font-inter font-semibold text-[24px] leading-[32px]">
           {sortedApps.length} Apps Found
         </p>
 
-        <button className="flex items-center justify-start gap-[10px] px-4 py-3 w-[160px] h-[43px] bg-white border border-[#d2d2d2] rounded-sm">
-          <span className="text-[#627382] font-inter font-normal text-[16px] leading-[19px]">
-            Sort By Size
-          </span>
-          <svg
-            className="w-4 h-4 ml-auto"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+        <div className="relative">
+          <button
+            onClick={() => setDropdownOpen(!dropdownOpen)}
+            className="flex items-center justify-between gap-[10px] px-4 py-3 w-[160px] h-[43px] bg-white border border-[#d2d2d2] rounded-sm"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
+            <span className="text-[#627382] font-inter font-normal text-[16px] leading-[19px]">
+              Sort By Size
+            </span>
+            <IoCaretDownSharp className="w-[16px] h-[16px] text-[#627382]" />
+          </button>
+
+          {dropdownOpen && (
+            <div className="absolute top-full left-0 mt-2 w-[160px] bg-white border border-[#d2d2d2] rounded-sm shadow-md z-10">
+              <button
+                onClick={() => handleSortChange("high-low")}
+                className={`block w-full text-left px-4 py-2 text-sm ${sortOrder === "high-low" ? "bg-gray-100 font-semibold" : ""
+                  }`}
+              >
+                High - Low
+              </button>
+              <button
+                onClick={() => handleSortChange("low-high")}
+                className={`block w-full text-left px-4 py-2 text-sm ${sortOrder === "low-high" ? "bg-gray-100 font-semibold" : ""
+                  }`}
+              >
+                Low - High
+              </button>
+            </div>
+          )}
+        </div>
       </div>
 
-      {/* Installed Apps List */}
+      {/* Installed Apps List with Framer Motion layout animation */}
       <div className="flex flex-col gap-6 w-full max-w-[1440px] mx-auto px-4 sm:px-10">
         {sortedApps.map((app) => (
-          <div
+          <motion.div
             key={app.id}
+            layout
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className="w-full h-[112px] flex flex-row justify-between items-center gap-4 p-4 rounded-md bg-white shadow-md hover:shadow-lg transition"
           >
             {/* Left: Image + Info */}
@@ -109,19 +143,14 @@ const MyInstallation = () => {
                   {app.title}
                 </h2>
                 <div className="flex items-center gap-5 mt-2">
-                  {/* Downloads */}
                   <div className="flex items-center gap-1">
                     <img src={downloadIcon} alt="downloads" className="w-4 h-4" />
                     <span className="text-[#627382] text-sm">{app.downloads}</span>
                   </div>
-
-                  {/* Rating */}
                   <div className="flex items-center gap-1">
                     <img src={starIcon} alt="rating" className="w-4 h-4" />
                     <span className="text-[#627382] text-sm">{app.ratingAvg}</span>
                   </div>
-
-                  {/* Size */}
                   <div className="flex items-center gap-1">
                     <span className="text-[#627382] text-sm">{app.size} MB</span>
                   </div>
@@ -138,7 +167,7 @@ const MyInstallation = () => {
                 Uninstall
               </span>
             </button>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
