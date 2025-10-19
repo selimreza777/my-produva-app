@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import appsData from "../data/appsData.json";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 // Import icons
 import downloadIcon from "../assets/download-ico.png";
@@ -49,12 +47,9 @@ const AppDetails = () => {
   const handleInstall = () => {
     if (!app) return;
     setInstalled(true);
-
     const existingApps = JSON.parse(localStorage.getItem("installedApps")) || [];
     const updatedApps = [...existingApps, app];
     localStorage.setItem("installedApps", JSON.stringify(updatedApps));
-
-    toast.success(`${app.title} Installed Successfully!`);
   };
 
   const ratings = app.ratings;
@@ -62,8 +57,6 @@ const AppDetails = () => {
 
   return (
     <div className="min-h-screen bg-[#F8F6FF] flex flex-col">
-      <ToastContainer />
-
       <div className="px-4 sm:px-[100px] py-14 flex-1">
         {/* App Info Section */}
         <div className="flex flex-col lg:flex-row gap-10 mb-12">
@@ -96,11 +89,10 @@ const AppDetails = () => {
             <button
               disabled={installed}
               onClick={handleInstall}
-              className={`w-full sm:w-[239px] h-[52px] flex justify-center items-center gap-2 px-5 py-3 rounded-md font-semibold text-white transition-all ${
-                installed
-                  ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-[#00D390] hover:scale-105 hover:brightness-95"
-              }`}
+              className={`w-full sm:w-[239px] h-[52px] flex justify-center items-center gap-2 px-5 py-3 rounded-md font-semibold text-white transition-all ${installed
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-[#00D390] hover:scale-105 hover:brightness-95"
+                }`}
             >
               {installed ? "Installed" : `Install Now (${app.size} MB)`}
             </button>
@@ -108,7 +100,7 @@ const AppDetails = () => {
         </div>
 
         {/* Ratings Bar Section */}
-        <div className="mb-12 max-w-[1200px] space-y-4">
+        <div className="mb-12 max-w-[1200px] space-y-4 relative">
           <div className="border-t border-[#001931]/20 opacity-50 mb-6"></div>
 
           <h2 className="text-[#001931] font-inter text-[22px] sm:text-[24px] font-semibold mb-4">
@@ -118,17 +110,53 @@ const AppDetails = () => {
           {[5, 4, 3, 2, 1].map((star) => {
             const ratingObj = ratings.find((r) => parseInt(r.name) === star) || { count: 0 };
             const barWidthPercent = (ratingObj.count / maxCount) * 100;
+            const [hovered, setHovered] = useState(false);
 
             return (
-              <div key={star} className="flex items-center gap-4">
+              <div
+                key={star}
+                className="relative flex items-center gap-4 cursor-pointer transition-transform duration-300 hover:scale-105"
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
+              >
                 <span className="w-[50px] sm:w-[60px] text-[#627382] text-[16px] sm:text-[18px]">
                   {star} star
                 </span>
-                <div className="h-6 sm:h-8 bg-gray-200 rounded flex-1 overflow-hidden">
+                <div className="h-6 sm:h-8 bg-gray-200 rounded flex-1 overflow-visible relative">
                   <div
                     className="h-full bg-orange-400 rounded transition-all duration-300"
                     style={{ width: `${barWidthPercent}%` }}
                   />
+
+                  {/* Mini Tooltip Card */}
+                  {hovered && (
+                    <div
+                      style={{ width: `${Math.max(star * 50, 150)}px` }} // minimum 150px width
+                      className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-30 bg-gradient-to-br from-purple-400 to-pink-400 text-white shadow-2xl rounded-2xl px-6 py-4 transition-all duration-300"
+                    >
+                      <div className="flex justify-center items-center gap-2 mb-2">
+                        {Array(star)
+                          .fill()
+                          .map((_, i) => (
+                            <span key={i} className="text-yellow-300 text-xl drop-shadow-lg">
+                              ★
+                            </span>
+                          ))}
+                        {Array(5 - star)
+                          .fill()
+                          .map((_, i) => (
+                            <span key={i} className="text-white/50 text-xl">
+                              ★
+                            </span>
+                          ))}
+                      </div>
+                      <p className="text-center text-sm sm:text-[14px]">
+                        {ratingObj.count} user{ratingObj.count > 1 ? "s" : ""} rated {star} star{star > 1 ? "s" : ""}.
+                      </p>
+
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-3 h-3 bg-gradient-to-br from-purple-400 to-pink-400 rotate-45"></div>
+                    </div>
+                  )}
                 </div>
               </div>
             );
