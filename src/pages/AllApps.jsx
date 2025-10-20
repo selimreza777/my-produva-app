@@ -6,8 +6,8 @@ import AppCard from "../components/AppCard";
 
 const AllApps = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [loading, setLoading] = useState(false); // ✅ Loading state
-  const [filteredApps, setFilteredApps] = useState(appsData); // ✅ State for filtered apps
+  const [loading, setLoading] = useState(false);
+  const [filteredApps, setFilteredApps] = useState(appsData);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -17,14 +17,13 @@ const AllApps = () => {
     setSearchTerm(value);
     setLoading(true);
 
-    // Simulate a small delay for loading animation
     setTimeout(() => {
       const filtered = appsData.filter((app) =>
         app.title.toLowerCase().includes(value.toLowerCase())
       );
       setFilteredApps(filtered);
       setLoading(false);
-    }, 400); // 0.4s delay
+    }, 400);
   };
 
   const handleShowAll = () => {
@@ -106,4 +105,3 @@ const AllApps = () => {
 };
 
 export default AllApps;
-

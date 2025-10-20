@@ -2,7 +2,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Footer from "./components/Footer"; // ✅ Import your Footer
+import Footer from "./components/Footer";
 
 // Import pages
 import Home from "./pages/Home";
@@ -28,7 +28,7 @@ const App = () => {
           <Route path="/apps" element={<AllApps />} />
 
           {/* App Details */}
-          <Route path="/appdetails/:id" element={<AppDetails />} />
+          <Route path="/apps/:id" element={<AppDetails />} />
 
           {/* Installation Pages */}
           <Route path="/installation" element={<MyInstallation />} />
@@ -39,7 +39,7 @@ const App = () => {
         </Routes>
       </main>
 
-      {/* ✅ Footer */}
+      {/* Footer */}
       <Footer />
     </div>
   );

@@ -1,3 +1,4 @@
+// src/components/AppCard.jsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import downloadIcon from "../assets/download-ico.png";
@@ -8,7 +9,7 @@ const AppCard = ({ app }) => {
 
   return (
     <div
-      onClick={() => navigate(`/appdetails/${app.id}`)}
+      onClick={() => navigate(`/apps/${app.id}`)} // ✅ Fixed path here
       className="flex flex-col justify-start items-center bg-white border border-gray-200 rounded-md shadow-sm hover:shadow-md cursor-pointer transition-all duration-300 w-full h-[435px] transform hover:-translate-y-2"
     >
       <div className="mt-4 px-4 w-full h-[316px] flex items-center justify-center">
