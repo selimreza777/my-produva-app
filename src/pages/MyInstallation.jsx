@@ -133,17 +133,20 @@ const MyInstallation = () => {
                 alt={app.title}
                 className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-md"
               />
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full">
+
+              {/* Title + Info Below */}
+              <div className="flex flex-col w-full">
                 <h2 className="text-[#001931] font-medium text-[18px] sm:text-[20px] leading-[22px] sm:leading-[24px] capitalize">
                   {app.title}
                 </h2>
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5 mt-1 sm:mt-2 text-sm sm:text-base">
+
+                <div className="flex items-center gap-4 mt-2 text-sm sm:text-base">
                   <div className="flex items-center gap-1">
-                    <img src={downloadIcon} alt="downloads" className="w-3 h-3 sm:w-4 sm:h-4" />
+                    <img src={downloadIcon} alt="downloads" className="w-4 h-4" />
                     <span className="text-[#627382]">{app.downloads}</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <img src={starIcon} alt="rating" className="w-3 h-3 sm:w-4 sm:h-4" />
+                    <img src={starIcon} alt="rating" className="w-4 h-4" />
                     <span className="text-[#627382]">{app.ratingAvg}</span>
                   </div>
                   <div className="flex items-center gap-1">
