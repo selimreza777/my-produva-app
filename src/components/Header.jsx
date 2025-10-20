@@ -1,4 +1,3 @@
-// src/components/Header.jsx
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
@@ -6,6 +5,7 @@ import gitIcon from "../assets/git-ico.png";
 
 const Header = () => {
   const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
   const [hoverIndex, setHoverIndex] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const menuRef = useRef([]);
@@ -52,6 +52,16 @@ const Header = () => {
         </NavLink>
       </div>
 
+      {/* Hamburger Button for Mobile */}
+      <div className="lg:hidden navbar-center">
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="text-2xl focus:outline-none"
+        >
+          ☰
+        </button>
+      </div>
+
       {/* Desktop Menu */}
       <div className="navbar-center hidden lg:flex relative">
         <ul className="menu menu-horizontal px-1 gap-6 relative">
@@ -85,7 +95,7 @@ const Header = () => {
         </ul>
       </div>
 
-      {/* Contribute Button */}
+      {/* Right: Contribute Button */}
       <div className="navbar-end">
         <a
           href="https://github.com/selimreza777/my-produva-app"
@@ -100,6 +110,29 @@ const Header = () => {
           </span>
         </a>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {menuOpen && (
+        <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-md py-4">
+          <ul className="flex flex-col items-center gap-3">
+            {menuItems.map((item) => (
+              <li key={item.name}>
+                <NavLink
+                  to={item.path}
+                  onClick={() => setMenuOpen(false)}
+                  className={`font-semibold text-[16px] capitalize ${
+                    location.pathname === item.path
+                      ? "text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2]"
+                      : "text-black"
+                  }`}
+                >
+                  {item.name}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </header>
   );
 };
