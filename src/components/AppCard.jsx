@@ -9,12 +9,12 @@ const AppCard = ({ app }) => {
 
   return (
     <div
-      onClick={() => navigate(`/apps/${app.id}`)} // ✅ Fixed path here
+      onClick={() => navigate(`/apps/${app.id}`)}
       className="flex flex-col justify-start items-center bg-white border border-gray-200 rounded-md shadow-sm hover:shadow-md cursor-pointer transition-all duration-300 w-full h-[435px] transform hover:-translate-y-2"
     >
       <div className="mt-4 px-4 w-full h-[316px] flex items-center justify-center">
         <img
-          src={app.image}
+          src={process.env.PUBLIC_URL + '/' + app.image} // ✅ Fixed
           alt={app.title}
           className="w-full h-full object-cover rounded-md"
         />

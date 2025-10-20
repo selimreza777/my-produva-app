@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "/assets/demo-app-1.png",
+    "image": "assets/demo-app-1.png",
     "title": "ChatFlow: Connect Man by man",
     "companyName": "TechBangla",
     "description": "ChatFlow is an AI-powered messaging app designed to streamline communication for individuals and businesses alike. It combines real-time chat, multimedia sharing, and intelligent AI suggestions to enhance conversations. Users can create group chats, manage contact lists, and organize discussions with labels and priority tags. The app automatically summarizes long conversations, making it easier to catch up on important points. Integrated file sharing supports images, videos, documents, and links, while AI moderation ensures a safe and respectful chat environment. ChatFlow includes customizable notifications, status indicators, and offline messaging, so users never miss crucial messages. Its AI assistant suggests responses, generates quick replies, and provides context-aware prompts, saving time and increasing productivity. Security is paramount, with end-to-end encryption protecting personal and business data. Users can personalize themes, fonts, and layouts for a more comfortable experience. ChatFlow also supports integration with calendars, task managers, and other productivity apps, creating a seamless workflow. Whether for professional teams, remote collaboration, or casual chats, ChatFlow ensures efficient, secure, and enjoyable communication, enhancing social and business interactions while maintaining privacy and control over conversations.",
@@ -19,7 +19,7 @@
   },
   {
     "id": 2,
-    "image": "/assets/demo-app-2.png",
+    "image": "assets/demo-app-2.png",
     "title": "Taskify - Pro Version Control on",
     "companyName": "BanglaWork",
     "description": "Taskify is a robust task management app built to enhance team collaboration and productivity. It allows users to create projects, assign tasks, set deadlines, and track progress in real-time. The app provides Kanban boards, to-do lists, and calendar views, enabling teams to visualize work and prioritize effectively. Notifications, reminders, and automated status updates ensure deadlines are met and work flows smoothly. Taskify integrates with messaging, email, and cloud storage platforms to centralize communication and resources. Advanced reporting tools display project analytics, workload distribution, and team performance metrics, helping managers make informed decisions. The app also supports task dependencies, subtasks, and recurring tasks, which streamline complex workflows. Users can customize dashboards, labels, and filters for a personalized experience. Security features safeguard sensitive project information with role-based permissions and encrypted storage. With offline access and synchronization across devices, Taskify ensures uninterrupted workflow management. Suitable for remote teams, freelancers, and businesses of all sizes, Taskify enhances productivity, accountability, and collaboration, turning complex projects into manageable, efficient processes.",
@@ -37,7 +37,7 @@
   },
   {
     "id": 3,
-    "image": "/assets/demo-app-3.png",
+    "image": "assets/demo-app-3.png",
     "title": "FinTrack: Max perfect dill one",
     "companyName": "MoneyBD",
     "description": "FinTrack is a comprehensive personal finance and expense management app designed to help users monitor spending, manage budgets, and grow savings. The app automatically categorizes transactions, tracks income and expenses, and generates insightful reports and visual charts to identify financial trends. Users can set monthly or weekly budgets, receive alerts for overspending, and track progress toward financial goals. FinTrack integrates with multiple bank accounts, digital wallets, and payment platforms for seamless synchronization. The app also provides bill reminders, investment tracking, and financial planning tips to promote informed money management. Security features include encrypted data storage, secure authentication, and optional biometric login. Advanced analytics highlight spending patterns, cash flow, and potential savings opportunities. With customizable dashboards, recurring transaction automation, and expense prediction, users can take full control of their financial health. Whether for personal use, family finance management, or small business budgeting, FinTrack empowers users to achieve financial clarity, optimize spending, and make smarter financial decisions over time.",
@@ -55,7 +55,7 @@
   },
   {
     "id": 4,
-    "image": "/assets/demo-app-4.png",
+    "image": "assets/demo-app-4.png",
     "title": "HealthMate - You Fit your life one",
     "companyName": "Wellness Pro",
     "description": "HealthMate is a holistic health and fitness tracking app designed to support users in achieving their wellness goals. The app monitors physical activities, sleep patterns, and nutrition intake, providing comprehensive insights into overall health. Users can set fitness goals, track workouts, log meals, and monitor hydration levels. HealthMate integrates wearable devices for automatic data collection and provides detailed analytics to optimize performance. Guided workout routines, yoga sessions, and meditation exercises are included to enhance physical and mental well-being. The app also tracks health metrics such as heart rate, calories burned, and steps taken, while offering personalized recommendations based on user progress. Notifications, reminders, and progress reports motivate users to stay consistent. Community features allow sharing achievements, participating in challenges, and supporting accountability. HealthMate prioritizes data privacy with encrypted storage and secure user authentication. By combining activity tracking, nutrition guidance, and mental wellness tools, HealthMate empowers users to lead a balanced, healthier lifestyle tailored to individual needs and goals.",
@@ -73,7 +73,7 @@
   },
   {
     "id": 5,
-    "image": "/assets/demo-app-5.png",
+    "image": "assets/demo-app-5.png",
     "title": "EduLearn: Academy sourrundedd",
     "companyName": "SmartEd Ltd.",
     "description": "EduLearn is an interactive e-learning platform that provides students and educators with a comprehensive online learning environment. The app offers courses across multiple subjects, featuring video lectures, quizzes, and assignments to reinforce knowledge. Users can track progress, receive personalized recommendations, and participate in discussion forums for collaborative learning. EduLearn supports gamification through badges, achievements, and progress milestones, motivating students to stay engaged. Teachers can create content, monitor student performance, and offer feedback through analytics and reporting tools. The app includes offline access for lectures, adaptive learning paths, and a resource library with supplementary materials. Secure login, cloud storage, and privacy controls ensure safety of user data. EduLearn integrates with calendars, reminders, and notifications to streamline scheduling. Whether for academic studies, professional development, or lifelong learning, EduLearn delivers an engaging, interactive, and structured educational experience that supports knowledge retention, skill-building, and continuous improvement for learners of all ages.",
@@ -91,7 +91,7 @@
   },
   {
     "id": 6,
-    "image": "/assets/demo-app-6.png",
+    "image": "assets/demo-app-6.png",
     "title": "FitZone - Active daily routing",
     "companyName": "BodyFlex",
     "description": "FitZone is a personalized fitness app focused on helping users maintain an active lifestyle through daily workout routines, meal planning, and health tracking. The app provides a wide range of exercises, including strength training, cardio, yoga, and HIIT, with detailed video demonstrations and step-by-step guidance. Users can create custom workout plans, set goals, and monitor progress with metrics such as calories burned, distance, and exercise duration. FitZone also tracks nutrition, water intake, and sleep, giving a holistic overview of health. Notifications, reminders, and progress reports motivate users to stay consistent. Social features allow sharing achievements, joining community challenges, and connecting with friends. Integration with wearable devices and health apps ensures seamless tracking and analysis. FitZone provides educational content about fitness techniques, recovery, and nutrition. Security features protect user data while allowing cross-device synchronization. Designed for beginners and advanced fitness enthusiasts alike, FitZone offers a comprehensive, adaptive, and engaging platform for achieving physical wellness and maintaining a healthy, active lifestyle.",
@@ -109,7 +109,7 @@
   },
   {
     "id": 7,
-    "image": "/assets/demo-app-7.png",
+    "image": "assets/demo-app-7.png",
     "title": "NoteEase: Lite one your passive",
     "companyName": "SimpleSoft",
     "description": "NoteEase is a minimalist note-taking app that combines simplicity with powerful organizational features. Users can create notes, checklists, and reminders quickly, with a clean interface that minimizes distractions. Notes can include text, images, and voice recordings, while tags and folders help organize content efficiently. NoteEase offers cloud synchronization across devices, ensuring access anytime and anywhere. Dark mode, custom themes, and font options enhance readability and user comfort. The app includes search functionality for finding notes instantly and supports collaboration with shared notes and task lists. Offline access ensures productivity without internet connectivity. Advanced features include encrypted storage for sensitive data, reminder notifications, and integration with calendars and task management tools. NoteEase empowers users to manage personal and professional information effectively, streamline workflows, and maintain organized digital content, making it ideal for students, professionals, and creatives looking for a lightweight, efficient note-taking solution.",
@@ -127,7 +127,7 @@
   },
   {
     "id": 8,
-    "image": "/assets/demo-app-8.png",
+    "image": "assets/demo-app-8.png",
     "title": "TravelGo - Explore your moto",
     "companyName": "SkyRoute",
     "description": "TravelGo is a comprehensive travel app that simplifies trip planning and booking. Users can search for flights, hotels, and vacation packages with smart filters to find the best options based on budget, preferences, and location. The app provides real-time updates on flight schedules, price alerts, and personalized recommendations based on past travel history. Integrated maps and itinerary management help users plan each day of their trips efficiently. TravelGo includes features for sharing plans with friends and family, making collaborative travel easy. Additionally, the app offers local guides, attraction suggestions, and reviews to ensure travelers discover hidden gems. Secure payment gateways and multi-currency support make booking hassle-free. With offline access for essential documents and itineraries, users can travel confidently without connectivity issues. TravelGo’s user-friendly design emphasizes clarity and ease of navigation, providing a seamless experience for travelers of all ages and backgrounds. Whether planning solo adventures, family vacations, or business trips, TravelGo ensures efficient planning, smooth execution, and an enjoyable travel experience from start to finish.",
@@ -145,7 +145,7 @@
   },
   {
     "id": 9,
-    "image": "/assets/demo-app-9.png",
+    "image": "assets/demo-app-9.png",
     "title": "Musicly: Beat crash your self",
     "companyName": "TuneFlow",
     "description": "Musicly is an advanced music streaming app designed for audiophiles and casual listeners alike. It offers access to a vast library of songs, albums, and playlists across multiple genres, powered by AI-driven recommendations to help users discover new music. Musicly allows users to create custom playlists, follow favorite artists, and share tracks with friends. The app supports offline listening, high-fidelity audio quality, and personalized radio stations. It also integrates smart features such as mood-based playlists, sleep timers, and lyric display for an immersive experience. Musicly provides detailed insights into listening habits, showing trends and favorites over time. Social features allow collaborative playlist creation and live sharing, enhancing the communal experience of music enjoyment. Users can explore trending tracks, curated playlists, and exclusive content from artists. With its sleek interface, seamless performance, and rich customization options, Musicly ensures that users can enjoy music in a way that is personal, interactive, and highly engaging, making every listening session enjoyable and inspiring.",
@@ -163,7 +163,7 @@
   },
   {
     "id": 10,
-    "image": "/assets/demo-app-10.png",
+    "image": "assets/demo-app-10.png",
     "title": "Foodify - Taste be teste rock",
     "companyName": "TasteHub",
     "description": "Foodify is a comprehensive food delivery and discovery app that connects users with local restaurants, cafes, and food outlets. Users can browse menus, compare prices, and place orders for home delivery or pick-up. The app includes real-time tracking, estimated delivery times, and notifications for order updates. Foodify also provides personalized recommendations based on past orders, cuisine preferences, and trending dishes. Users can read and write reviews, rate restaurants, and share experiences with friends. Dietary filters allow selection of vegetarian, vegan, gluten-free, or allergy-safe options. Foodify supports secure payment gateways and multiple payment options for convenience. Additionally, the app features loyalty programs, discounts, and promotional offers. Its intuitive design ensures quick navigation, seamless ordering, and an enhanced user experience. With robust backend systems, Foodify maintains fast order processing, reliability, and customer support. Whether looking for everyday meals, exotic cuisines, or late-night snacks, Foodify ensures users enjoy a satisfying, effortless, and delicious food experience.",
@@ -181,7 +181,7 @@
   },
   {
     "id": 11,
-    "image": "/assets/demo-app-11.png",
+    "image": "assets/demo-app-11.png",
     "title": "Newsly: Daily gurbez jai din",
     "companyName": "MediaSmart",
     "description": "Newsly is a modern news aggregation app providing real-time updates from trusted global and local news sources. It offers personalized news feeds based on user interests, location, and reading habits. Users can explore various categories such as politics, technology, entertainment, sports, and health. Newsly includes multimedia content, such as videos, podcasts, and infographics, for an engaging reading experience. Features include saving articles for offline reading, sharing news with friends, and creating custom notifications for breaking news alerts. The app also allows commentary, discussion forums, and trending topic tracking, fostering active engagement. Advanced algorithms curate content, highlighting the most relevant and credible information while filtering out misinformation. Newsly’s intuitive interface, dark mode, and adjustable font sizes enhance readability and reduce eye strain. Whether following global events or niche interests, Newsly keeps users informed, encourages critical thinking, and delivers a seamless, insightful news experience for informed decision-making.",
@@ -199,7 +199,7 @@
   },
   {
     "id": 12,
-    "image": "/assets/demo-app-12.png",
+    "image": "assets/demo-app-12.png",
     "title": "ShopEasy - Smart buy on product",
     "companyName": "BuySmart",
     "description": "ShopEasy is a versatile e-commerce app designed for smart shopping on the go. Users can browse thousands of products across multiple categories, compare prices, read reviews, and make informed purchase decisions. The app features intelligent product recommendations based on browsing history, user preferences, and trending items. ShopEasy offers a secure checkout process, multiple payment options, and real-time order tracking. Users can create wishlists, set alerts for discounts or restocks, and receive personalized notifications for sales. Additionally, the app includes loyalty programs and rewards for frequent shoppers. Integration with delivery services ensures timely shipments, and the interface allows easy management of orders and returns. With user-friendly search filters, advanced sorting options, and a streamlined design, ShopEasy enhances convenience and efficiency. Its analytics provide insights into spending patterns and favorite brands. ShopEasy ensures that shopping is effortless, enjoyable, and optimized for every type of user, from casual buyers to deal hunters.",
@@ -217,7 +217,7 @@
   },
   {
     "id": 13,
-    "image": "/assets/demo-app-13.png",
+    "image": "assets/demo-app-13.png",
     "title": "MindSpace: Calm shine mood",
     "companyName": "CalmTech",
     "description": "MindSpace is a meditation and relaxation app focused on improving mental well-being and reducing stress. It offers guided meditation sessions, breathing exercises, and mindfulness programs tailored to different levels and time commitments. Users can track mood patterns, set meditation reminders, and participate in daily challenges to maintain consistency. The app features calming background music, nature sounds, and focus-enhancing soundscapes to create a serene environment. MindSpace also includes sleep aids, such as bedtime stories, ambient sounds, and sleep tracking. Progress analytics help users understand their stress levels, mindfulness improvements, and session frequency. The app emphasizes simplicity and ease of use, minimizing distractions while providing effective mental health tools. With personalized recommendations, community features, and motivational streaks, MindSpace empowers users to build resilience, improve focus, reduce anxiety, and enhance overall emotional well-being. Suitable for beginners and experienced meditators alike, it integrates seamlessly into daily routines for long-term mental health benefits.",
@@ -235,7 +235,7 @@
   },
   {
     "id": 14,
-    "image": "/assets/demo-app-14.png",
+    "image": "assets/demo-app-14.png",
     "title": "CodeMate - Dev is cloud base",
     "companyName": "DevSync",
     "description": "CodeMate is a lightweight mobile IDE designed for developers to code, test, and deploy applications from anywhere. It supports multiple programming languages, syntax highlighting, auto-completion, and debugging tools, enabling efficient coding on the go. Users can create projects, manage files, and collaborate with team members through integrated version control systems. CodeMate includes code snippets, templates, and tutorials to assist learning and speed up development. Cloud integration ensures projects are safely stored, synchronized across devices, and accessible remotely. The app provides terminal access, console outputs, and compilation support for building and testing code. Notifications alert users to errors, updates, and team collaboration activities. Security measures protect sensitive code and data. With an intuitive interface, customizable themes, and support for third-party plugins, CodeMate empowers developers to code efficiently, improve productivity, and maintain workflow continuity even when away from their main development environment.",
@@ -253,7 +253,7 @@
   },
   {
     "id": 15,
-    "image": "/assets/demo-app-15.png",
+    "image": "assets/demo-app-15.png",
     "title": "WeatherX: Sky sky white blue",
     "companyName": "SkyTech",
     "description": "WeatherX is a real-time weather forecasting app providing accurate updates for any location worldwide. It offers hourly, daily, and weekly forecasts, including temperature, humidity, wind speed, precipitation, and UV index. The app includes interactive radar maps, severe weather alerts, and personalized notifications for extreme conditions. Users can track weather trends, historical data, and climate patterns to plan activities efficiently. WeatherX integrates lifestyle suggestions, such as suitable clothing and outdoor activity recommendations based on current conditions. Its clean, intuitive interface ensures quick access to essential information, with dark and light modes for ease of viewing. Offline access, widgets, and synchronization across devices provide convenience and usability. Advanced analytics provide insight into temperature fluctuations, rainfall predictions, and weather anomalies. Whether for travel planning, commuting, or daily decision-making, WeatherX delivers reliable, timely, and detailed weather information, ensuring users stay prepared and informed in all situations.",
@@ -271,7 +271,7 @@
   },
   {
     "id": 16,
-    "image": "/assets/demo-app-16.png",
+    "image": "assets/demo-app-16.png",
     "title": "SafeLock - Vault floer tulip pice",
     "companyName": "SecureTech",
     "description": "SafeLock is a secure password manager and digital vault app that helps users store, organize, and protect sensitive information safely. It allows users to store passwords, PINs, credit card details, and confidential documents in an encrypted environment. The app includes biometric authentication, two-factor authentication, and secure cloud backup for convenience and peace of mind. SafeLock features password generation, auto-fill, and secure sharing options for trusted contacts. Users can categorize entries, search quickly, and receive security alerts for compromised accounts. The app provides audit reports, password strength analysis, and activity logs to maintain security hygiene. Its user-friendly interface emphasizes simplicity, accessibility, and efficiency, while maintaining strong encryption protocols to prevent unauthorized access. SafeLock also supports secure notes, private files, and emergency access for designated contacts. By combining advanced security measures, intuitive design, and comprehensive management tools, SafeLock empowers users to protect their digital identity, simplify password management, and maintain peace of mind in an increasingly digital world.",
