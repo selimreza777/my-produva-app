@@ -1,23 +1,19 @@
+// src/components/Header.jsx
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 import gitIcon from "../assets/git-ico.png";
 
 const Header = () => {
-  const location = useLocation(); // ✅ get current path
+  const location = useLocation();
 
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "Apps", path: "/apps" },
-    { name: "Installation", path: "/my-installation", altPaths: ["/installation"] }, // altPaths allows multiple paths
+    { name: "Installation", path: "/installation" }, // ✅ fixed path
   ];
 
-  const isActive = (item) => {
-    if (item.altPaths) {
-      return [item.path, ...item.altPaths].includes(location.pathname);
-    }
-    return location.pathname === item.path;
-  };
+  const isActive = (item) => location.pathname === item.path;
 
   return (
     <header className="navbar bg-base-100 px-4 lg:px-25">
@@ -30,7 +26,7 @@ const Header = () => {
           </span>
         </NavLink>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile Menu */}
         <div className="dropdown lg:hidden ml-2">
           <label tabIndex={0} className="btn btn-ghost">
             <svg
@@ -51,8 +47,11 @@ const Header = () => {
               <li key={item.name}>
                 <NavLink
                   to={item.path}
-                  className={`relative font-semibold text-[16px] leading-[19px] capitalize
-                  ${isActive(item) ? "text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2]" : "text-black"}`}
+                  className={`font-semibold text-[16px] capitalize ${
+                    isActive(item)
+                      ? "text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2]"
+                      : "text-black"
+                  }`}
                 >
                   {item.name}
                 </NavLink>
@@ -69,8 +68,11 @@ const Header = () => {
             <li key={item.name}>
               <NavLink
                 to={item.path}
-                className={`relative font-semibold text-[16px] leading-[19px] capitalize
-                ${isActive(item) ? "text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2]" : "text-black"}`}
+                className={`font-semibold text-[16px] capitalize ${
+                  isActive(item)
+                    ? "text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2]"
+                    : "text-black"
+                }`}
               >
                 {item.name}
               </NavLink>
@@ -85,7 +87,7 @@ const Header = () => {
           href="https://github.com/selimreza777/my-produva-app"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 rounded-[4px] bg-gradient-to-r from-[#632EE3] to-[#9F62F2] px-4 py-[12px] h-[43px] transition-all duration-300 hover:opacity-90"
+          className="flex items-center justify-center gap-2 rounded-[4px] bg-gradient-to-r from-[#632EE3] to-[#9F62F2] px-4 py-[12px] h-[43px] hover:opacity-90 transition-all"
           style={{ width: "145px" }}
         >
           <img src={gitIcon} alt="GitHub" className="w-5 h-5" />

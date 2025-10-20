@@ -30,9 +30,8 @@ const App = () => {
           {/* App Details */}
           <Route path="/apps/:id" element={<AppDetails />} />
 
-          {/* Installation Pages */}
+          {/* ✅ Only keep /installation (remove /my-installation from route) */}
           <Route path="/installation" element={<MyInstallation />} />
-          <Route path="/my-installation" element={<MyInstallation />} />
 
           {/* 404 Page */}
           <Route path="*" element={<ErrorPage />} />
