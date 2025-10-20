@@ -14,7 +14,7 @@ const AppCard = ({ app }) => {
     >
       <div className="mt-4 px-4 w-full h-[316px] flex items-center justify-center">
         <img
-          src={process.env.PUBLIC_URL + '/' + app.image} // ✅ Fixed
+          src={`/${app.image}`} // ✅ Vite + Netlify friendly
           alt={app.title}
           className="w-full h-full object-cover rounded-md"
         />
