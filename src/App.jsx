@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
-import AppRoutes from "./routes/route"; // Routes imported from route.jsx
+import AppRoutes from "./Routes/Route"; // Routes imported from route.jsx
 
 const App = () => {
   const location = useLocation();
