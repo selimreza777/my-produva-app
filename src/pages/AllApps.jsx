@@ -27,9 +27,14 @@ const AllApps = () => {
   };
 
   const handleShowAll = () => {
+    setLoading(true);
     setSearchTerm("");
-    setFilteredApps(appsData);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    setTimeout(() => {
+      setFilteredApps(appsData);
+      setLoading(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 400); // same 0.4s delay for smooth effect
   };
 
   return (
@@ -92,9 +97,13 @@ const AllApps = () => {
                 onClick={handleShowAll}
                 className="w-[140px] sm:w-[145px] h-[44px] sm:h-[48px] flex justify-center items-center rounded-md bg-gradient-to-br from-[#632EE3] to-[#9F62F2] px-4 py-2 sm:py-3"
               >
-                <span className="font-inter font-semibold text-[14px] sm:text-[16px] leading-[100%] text-white capitalize">
-                  Show All
-                </span>
+                {loading ? (
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                ) : (
+                  <span className="font-inter font-semibold text-[14px] sm:text-[16px] leading-[100%] text-white capitalize">
+                    Show All
+                  </span>
+                )}
               </button>
             </div>
           )

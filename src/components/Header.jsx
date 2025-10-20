@@ -19,7 +19,12 @@ const Header = () => {
 
   useEffect(() => {
     // Update activeIndex based on current path
-    const index = menuItems.findIndex((item) => item.path === location.pathname);
+    const index = menuItems.findIndex((item) => {
+      if (item.path === "/apps" && location.pathname.startsWith("/apps")) {
+        return true;
+      }
+      return location.pathname === item.path;
+    });
     setActiveIndex(index !== -1 ? index : 0);
   }, [location.pathname]);
 
@@ -61,7 +66,9 @@ const Header = () => {
               <NavLink
                 to={item.path}
                 className={`font-semibold text-[16px] capitalize ${
-                  location.pathname === item.path
+                  item.path === "/apps" && location.pathname.startsWith("/apps")
+                    ? "text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2]"
+                    : location.pathname === item.path
                     ? "text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2]"
                     : "text-black"
                 }`}

@@ -9,7 +9,6 @@ import { motion } from "framer-motion";
 const MyInstallation = () => {
   const [installedApps, setInstalledApps] = useState([]);
   const [sortedApps, setSortedApps] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [sortOrder, setSortOrder] = useState("high-low");
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -19,12 +18,9 @@ const MyInstallation = () => {
   };
 
   useEffect(() => {
-    setLoading(true);
     loadInstalledApps();
-    const timer = setTimeout(() => setLoading(false), 500);
     window.addEventListener("storage", loadInstalledApps);
     return () => {
-      clearTimeout(timer);
       window.removeEventListener("storage", loadInstalledApps);
     };
   }, []);
@@ -51,13 +47,6 @@ const MyInstallation = () => {
     setSortOrder(order);
     setDropdownOpen(false);
   };
-
-  if (loading)
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#7b43e9] rounded-full animate-spin"></div>
-      </div>
-    );
 
   if (installedApps.length === 0)
     return (
