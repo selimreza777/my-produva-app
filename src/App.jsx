@@ -1,16 +1,10 @@
 // src/App.jsx
 import React, { useState, useEffect } from "react";
-import { Routes, Route, useLocation, Navigate } from "react-router-dom"; // <-- import Navigate
+import { useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
-
-// Import pages
-import Home from "./pages/Home";
-import AllApps from "./pages/AllApps";
-import AppDetails from "./pages/AppDetails";
-import MyInstallation from "./pages/MyInstallation";
-import ErrorPage from "./pages/ErrorPage";
+import AppRoutes from "./routes/route"; // Routes imported from route.jsx
 
 const App = () => {
   const location = useLocation();
@@ -34,15 +28,7 @@ const App = () => {
       {/* Main Content */}
       {!loading && (
         <main className="flex-1 container mx-auto px-4 py-6">
-          <Routes>
-            {/* Redirect / to /home */}
-            <Route path="/" element={<Navigate to="/home" replace />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/apps" element={<AllApps />} />
-            <Route path="/apps/:id" element={<AppDetails />} />
-            <Route path="/installation" element={<MyInstallation />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Routes>
+          <AppRoutes />
         </main>
       )}
 
