@@ -10,29 +10,25 @@ const App = () => {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
 
-  // Show loader on route change
+  // Loader on route change
   useEffect(() => {
     setLoading(true);
-    const timer = setTimeout(() => setLoading(false), 500); // 0.5s loader
+    const timer = setTimeout(() => setLoading(false), 500);
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50 text-gray-900 font-inter">
-      {/* Header */}
+    <div className="flex flex-col min-h-screen bg-[#f8f6ff] text-gray-900 font-inter">
       <Header />
 
-      {/* Loader */}
       {loading && <Loader />}
 
-      {/* Main Content */}
       {!loading && (
-        <main className="flex-1 container mx-auto px-4 py-6">
+        <main className="flex-1 w-full">
           <AppRoutes />
         </main>
       )}
 
-      {/* Footer */}
       <Footer />
     </div>
   );

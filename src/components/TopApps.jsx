@@ -1,10 +1,20 @@
-import React from "react";
+// src/components/TopApps.jsx
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import appsData from "../data/appsData.json";
-import AppCard from "../components/AppCard";
+import AppCard from "./AppCard"; // same folder import
 
 const TopApps = () => {
   const navigate = useNavigate();
+  const [appsData, setAppsData] = useState([]);
+
+  useEffect(() => {
+    // Fetch from public folder
+    fetch("/appsData.json")
+      .then((res) => res.json())
+      .then((data) => setAppsData(data))
+      .catch((err) => console.error("Failed to fetch appsData:", err));
+  }, []);
+
   const topApps = appsData.slice(0, 8);
 
   const handleShowAll = () => {

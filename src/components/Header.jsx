@@ -1,8 +1,8 @@
 // src/components/Header.jsx
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import logo from "../assets/logo.png";
-import gitIcon from "../assets/git-ico.png";
+import logo from "../assets/logo.png"; // Logo from assets
+import gitIcon from "../assets/git-ico.png"; // Git icon from assets
 
 const Header = () => {
   const location = useLocation();
@@ -19,7 +19,6 @@ const Header = () => {
   ];
 
   useEffect(() => {
-    // Update activeIndex based on current path
     const index = menuItems.findIndex((item) => {
       if (item.path === "/apps" && location.pathname.startsWith("/apps")) {
         return true;
@@ -76,22 +75,20 @@ const Header = () => {
             >
               <NavLink
                 to={item.path}
-                className={`font-semibold text-[16px] capitalize ${
-                  item.path === "/apps" && location.pathname.startsWith("/apps")
+                className={`font-semibold text-[16px] capitalize ${item.path === "/apps" && location.pathname.startsWith("/apps")
                     ? "text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2]"
                     : location.pathname === item.path
-                    ? "text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2]"
-                    : "text-black"
-                }`}
+                      ? "text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2]"
+                      : "text-black"
+                  }`}
               >
                 {item.name}
               </NavLink>
             </li>
           ))}
-          {/* Underline */}
           <span
             ref={underlineRef}
-            className="absolute bottom-3 h-[2px] bg-gradient-to-r from-[#632EE3] to-[#9F62F2] transition-all duration-300"
+            className="absolute bottom-2 h-[2px] bg-gradient-to-r from-[#632EE3] to-[#9F62F2] transition-all duration-300"
           />
         </ul>
       </div>
@@ -121,11 +118,10 @@ const Header = () => {
                 <NavLink
                   to={item.path}
                   onClick={() => setMenuOpen(false)}
-                  className={`font-semibold text-[16px] capitalize ${
-                    location.pathname === item.path
+                  className={`font-semibold text-[16px] capitalize ${location.pathname === item.path
                       ? "text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2]"
                       : "text-black"
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </NavLink>

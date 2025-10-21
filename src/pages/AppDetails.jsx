@@ -1,52 +1,112 @@
 // src/pages/AppDetails.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import appsData from "../data/appsData.json";
 import downloadIcon from "../assets/download-ico.png";
 import ratingIcon from "../assets/rating-ico.png";
 import reviewIcon from "../assets/icon-review.png";
 import errorImg from "../assets/App-Error.png";
 
+// Import all app images from src/assets
+import demoApp1 from "../assets/demo-app-1.png";
+import demoApp2 from "../assets/demo-app-2.png";
+import demoApp3 from "../assets/demo-app-3.png";
+import demoApp4 from "../assets/demo-app-4.png";
+import demoApp5 from "../assets/demo-app-5.png";
+import demoApp6 from "../assets/demo-app-6.png";
+import demoApp7 from "../assets/demo-app-7.png";
+import demoApp8 from "../assets/demo-app-8.png";
+import demoApp9 from "../assets/demo-app-9.png";
+import demoApp10 from "../assets/demo-app-10.png";
+import demoApp11 from "../assets/demo-app-11.png";
+import demoApp12 from "../assets/demo-app-12.png";
+import demoApp13 from "../assets/demo-app-13.png";
+import demoApp14 from "../assets/demo-app-14.png";
+import demoApp15 from "../assets/demo-app-15.png";
+import demoApp16 from "../assets/demo-app-16.png";
+
+// Map image filenames to imported images
+const images = {
+  "demo-app-1.png": demoApp1,
+  "demo-app-2.png": demoApp2,
+  "demo-app-3.png": demoApp3,
+  "demo-app-4.png": demoApp4,
+  "demo-app-5.png": demoApp5,
+  "demo-app-6.png": demoApp6,
+  "demo-app-7.png": demoApp7,
+  "demo-app-8.png": demoApp8,
+  "demo-app-9.png": demoApp9,
+  "demo-app-10.png": demoApp10,
+  "demo-app-11.png": demoApp11,
+  "demo-app-12.png": demoApp12,
+  "demo-app-13.png": demoApp13,
+  "demo-app-14.png": demoApp14,
+  "demo-app-15.png": demoApp15,
+  "demo-app-16.png": demoApp16,
+};
+
 const AppDetails = () => {
   const { id } = useParams();
-  const app = appsData.find((app) => app.id === Number(id));
-  const [installed, setInstalled] = useState(
-    JSON.parse(localStorage.getItem("installedApps"))?.some(
-      (a) => a.id === app?.id
-    ) || false
-  );
+  const [app, setApp] = useState(null);
+  const [installed, setInstalled] = useState(false);
+  const [hoveredStar, setHoveredStar] = useState(null);
+  const [appsData, setAppsData] = useState([]);
 
-  if (!app)
+  useEffect(() => {
+    const fetchApps = async () => {
+      try {
+        const response = await fetch("/appsData.json");
+        const data = await response.json();
+        setAppsData(data);
+
+        const foundApp = data.find((a) => a.id === Number(id));
+        setApp(foundApp);
+
+        setInstalled(
+          JSON.parse(localStorage.getItem("installedApps"))?.some(
+            (a) => a.id === foundApp?.id
+          ) || false
+        );
+      } catch (error) {
+        console.error("Error loading apps data:", error);
+      }
+    };
+
+    fetchApps();
+  }, [id]);
+
+  if (!app) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-[#F8F6FF] px-4 text-center">
         <img
           src={errorImg}
           alt="App Not Found"
-          className="w-[395.9px] h-[362.09px] sm:w-[300px] sm:h-[275px] mb-6"
+          className="w-[395px] h-[362px] sm:w-[300px] sm:h-[275px] mb-6"
         />
-        <h1 className="text-[#001931] font-inter font-semibold text-[48px] sm:text-3xl leading-[60px] mb-4">
-          OPPS!! APP NOT FOUND
+        <h1 className="text-[#001931] font-inter font-semibold text-[48px] sm:text-3xl mb-4">
+          OOPS!! APP NOT FOUND
         </h1>
-        <p className="text-[#627382] font-inter text-[20px] font-normal leading-[32px] mb-8 max-w-3xl">
-          The App you are requesting is not found on our system. Please try another apps.
+        <p className="text-[#627382] text-[20px] mb-8 max-w-3xl">
+          The app you are requesting is not found in our system. Please try another app.
         </p>
         <Link
           to="/apps"
-          className="flex justify-center items-center w-[150px] h-[48px] px-4 py-3 rounded-md bg-gradient-to-br from-[#632EE3] to-[#9F62F2] text-white font-inter font-semibold hover:brightness-90 transition"
+          className="w-[150px] h-[48px] flex justify-center items-center rounded-md bg-gradient-to-br from-[#632EE3] to-[#9F62F2] text-white font-semibold hover:brightness-90 transition"
         >
-          Go Back!
+          Go Back
         </Link>
       </div>
     );
+  }
 
   const handleInstall = () => {
-    if (!app) return;
     setInstalled(true);
     const existingApps = JSON.parse(localStorage.getItem("installedApps")) || [];
     const updatedApps = [...existingApps, app];
     localStorage.setItem("installedApps", JSON.stringify(updatedApps));
   };
 
+  // Use mapped image
+  const appImage = images[app.image];
   const ratings = app.ratings;
   const maxCount = Math.max(...ratings.map((r) => r.count));
 
@@ -57,7 +117,7 @@ const AppDetails = () => {
         <div className="flex flex-col lg:flex-row gap-10 mb-12">
           <div className="flex-shrink-0 flex justify-center">
             <img
-              src={process.env.PUBLIC_URL + app.image} // ✅ Public path fix
+              src={appImage}
               alt={app.title}
               className="w-[280px] sm:w-[350px] h-[280px] sm:h-[350px] object-cover rounded-md shadow-md"
             />
@@ -65,10 +125,10 @@ const AppDetails = () => {
 
           <div className="flex-1 flex flex-col justify-between">
             <div>
-              <h1 className="text-[#001931] font-inter text-2xl lg:text-[32px] font-bold mb-2">
+              <h1 className="text-[#001931] text-2xl lg:text-[32px] font-bold mb-2">
                 {app.title}
               </h1>
-              <p className="text-[#555] font-inter text-[18px] sm:text-[20px] leading-[30px] mb-4">
+              <p className="text-[#555] text-[18px] sm:text-[20px] leading-[30px] mb-4">
                 Developed by{" "}
                 <span className="text-[#7b43e9] font-medium">{app.companyName}</span>
               </p>
@@ -98,21 +158,18 @@ const AppDetails = () => {
         {/* Ratings Bar */}
         <div className="mb-12 max-w-[1200px] space-y-4 relative">
           <div className="border-t border-[#001931]/20 opacity-50 mb-6"></div>
-          <h2 className="text-[#001931] font-inter text-[22px] sm:text-[24px] font-semibold mb-4">
-            Ratings
-          </h2>
+          <h2 className="text-[#001931] text-[24px] font-semibold mb-4">Ratings</h2>
 
           {[5, 4, 3, 2, 1].map((star) => {
             const ratingObj = ratings.find((r) => parseInt(r.name) === star) || { count: 0 };
             const barWidthPercent = (ratingObj.count / maxCount) * 100;
-            const [hovered, setHovered] = useState(false);
 
             return (
               <div
                 key={star}
                 className="relative flex items-center gap-4 cursor-pointer transition-transform duration-300 hover:scale-105"
-                onMouseEnter={() => setHovered(true)}
-                onMouseLeave={() => setHovered(false)}
+                onMouseEnter={() => setHoveredStar(star)}
+                onMouseLeave={() => setHoveredStar(null)}
               >
                 <span className="w-[50px] sm:w-[60px] text-[#627382] text-[16px] sm:text-[18px]">
                   {star} star
@@ -123,26 +180,18 @@ const AppDetails = () => {
                     style={{ width: `${barWidthPercent}%` }}
                   />
 
-                  {hovered && (
+                  {hoveredStar === star && (
                     <div
                       style={{ width: `${Math.max(star * 50, 150)}px` }}
                       className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-30 bg-gradient-to-br from-purple-400 to-pink-400 text-white shadow-2xl rounded-2xl px-6 py-4 transition-all duration-300"
                     >
                       <div className="flex justify-center items-center gap-2 mb-2">
-                        {Array(star)
-                          .fill()
-                          .map((_, i) => (
-                            <span key={i} className="text-yellow-300 text-xl drop-shadow-lg">
-                              ★
-                            </span>
-                          ))}
-                        {Array(5 - star)
-                          .fill()
-                          .map((_, i) => (
-                            <span key={i} className="text-white/50 text-xl">
-                              ★
-                            </span>
-                          ))}
+                        {Array(star).fill().map((_, i) => (
+                          <span key={i} className="text-yellow-300 text-xl drop-shadow-lg">★</span>
+                        ))}
+                        {Array(5 - star).fill().map((_, i) => (
+                          <span key={i} className="text-white/50 text-xl">★</span>
+                        ))}
                       </div>
                       <p className="text-center text-sm sm:text-[14px]">
                         {ratingObj.count} user{ratingObj.count > 1 ? "s" : ""} rated {star} star{star > 1 ? "s" : ""}.
@@ -156,11 +205,9 @@ const AppDetails = () => {
           })}
 
           <div className="flex justify-between mt-2 px-[40px] sm:px-[80px] text-sm text-gray-600">
-            {ratings
-              .sort((a, b) => parseInt(a.name) - parseInt(b.name))
-              .map((r, idx) => (
-                <span key={idx}>{r.count}</span>
-              ))}
+            {ratings.sort((a, b) => parseInt(a.name) - parseInt(b.name)).map((r, idx) => (
+              <span key={idx}>{r.count}</span>
+            ))}
           </div>
 
           <div className="border-t border-[#001931]/20 opacity-50 mt-8 mb-6"></div>
@@ -180,17 +227,18 @@ const AppDetails = () => {
   );
 };
 
+// StatCard component
 const StatCard = ({ icon, label, value }) => (
   <div className="flex flex-col items-center sm:items-start gap-2">
     <img src={icon} alt={label} className="w-10 h-10" />
     <span className="text-gray-500 text-sm">{label}</span>
-    <span className="text-[#001931] font-inter font-extrabold text-[32px] sm:text-[40px]">{value}</span>
+    <span className="text-[#001931] font-extrabold text-[32px] sm:text-[40px]">{value}</span>
   </div>
 );
 
+// Split description into 3 parts
 const splitDescription = (text) => {
-  const cleanText = text.replace(/[\r\n]+/g, " ").trim();
-  const sentences = cleanText.split(". ").map((s) => s.trim()).filter(Boolean);
+  const sentences = text.replace(/[\r\n]+/g, " ").split(". ").filter(Boolean);
   const partSize = Math.ceil(sentences.length / 3);
 
   return [

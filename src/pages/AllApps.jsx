@@ -1,16 +1,32 @@
 // src/pages/AllApps.jsx
 import React, { useState, useEffect } from "react";
 import { CiSearch } from "react-icons/ci";
-import appsData from "../data/appsData.json";
 import AppCard from "../components/AppCard";
 
 const AllApps = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
-  const [filteredApps, setFilteredApps] = useState(appsData);
+  const [appsData, setAppsData] = useState([]);
+  const [filteredApps, setFilteredApps] = useState([]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // Fetch JSON from public folder
+    const fetchApps = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch("/appsData.json");
+        const data = await response.json();
+        setAppsData(data);
+        setFilteredApps(data);
+      } catch (error) {
+        console.error("Error loading apps data:", error);
+      }
+      setLoading(false);
+    };
+
+    fetchApps();
   }, []);
 
   const handleSearch = (value) => {
@@ -34,7 +50,7 @@ const AllApps = () => {
       setFilteredApps(appsData);
       setLoading(false);
       window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 400); // same 0.4s delay for smooth effect
+    }, 400);
   };
 
   return (
