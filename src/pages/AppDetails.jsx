@@ -2,26 +2,20 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import appsData from "../data/appsData.json";
-
-// Import icons from src/assets (okay to import like this)
 import downloadIcon from "../assets/download-ico.png";
 import ratingIcon from "../assets/rating-ico.png";
 import reviewIcon from "../assets/icon-review.png";
-
-// Error image
 import errorImg from "../assets/App-Error.png";
 
 const AppDetails = () => {
   const { id } = useParams();
   const app = appsData.find((app) => app.id === Number(id));
-
   const [installed, setInstalled] = useState(
     JSON.parse(localStorage.getItem("installedApps"))?.some(
       (a) => a.id === app?.id
     ) || false
   );
 
-  // ❌ App Not Found case
   if (!app)
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-[#F8F6FF] px-4 text-center">
@@ -59,11 +53,11 @@ const AppDetails = () => {
   return (
     <div className="min-h-screen bg-[#F8F6FF] flex flex-col">
       <div className="px-4 sm:px-[100px] py-14 flex-1">
-        {/* App Info Section */}
+        {/* App Info */}
         <div className="flex flex-col lg:flex-row gap-10 mb-12">
           <div className="flex-shrink-0 flex justify-center">
             <img
-              src={process.env.PUBLIC_URL + "/" + app.image} // ✅ FIXED for Netlify
+              src={process.env.PUBLIC_URL + app.image} // ✅ Public path fix
               alt={app.title}
               className="w-[280px] sm:w-[350px] h-[280px] sm:h-[350px] object-cover rounded-md shadow-md"
             />
@@ -101,10 +95,9 @@ const AppDetails = () => {
           </div>
         </div>
 
-        {/* Ratings Bar Section */}
+        {/* Ratings Bar */}
         <div className="mb-12 max-w-[1200px] space-y-4 relative">
           <div className="border-t border-[#001931]/20 opacity-50 mb-6"></div>
-
           <h2 className="text-[#001931] font-inter text-[22px] sm:text-[24px] font-semibold mb-4">
             Ratings
           </h2>
@@ -173,7 +166,7 @@ const AppDetails = () => {
           <div className="border-t border-[#001931]/20 opacity-50 mt-8 mb-6"></div>
         </div>
 
-        {/* Description Section */}
+        {/* Description */}
         <div className="max-w-full sm:pt-6">
           <h2 className="text-xl sm:text-2xl font-bold text-[#001931] mb-6">Description</h2>
           <div className="text-[#627382] text-[16px] sm:text-[20px] leading-[28px] sm:leading-[32px] tracking-normal text-justify space-y-4">
