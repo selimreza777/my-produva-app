@@ -15,7 +15,7 @@ const AppCard = ({ app }) => {
       {/* Image Container */}
       <div className="mt-4 px-4 w-full h-[316px] flex items-center justify-center">
         <img
-          src={process.env.PUBLIC_URL + "/" + app.image} // ✅ Public folder friendly
+          src={app.image} // ✅ Use public path directly
           alt={app.title}
           className="w-full h-full object-cover rounded-md"
         />
