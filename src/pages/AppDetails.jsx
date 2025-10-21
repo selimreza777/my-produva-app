@@ -1,8 +1,9 @@
+// src/pages/AppDetails.jsx
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import appsData from "../data/appsData.json";
 
-// Import icons
+// Import icons from src/assets (okay to import like this)
 import downloadIcon from "../assets/download-ico.png";
 import ratingIcon from "../assets/rating-ico.png";
 import reviewIcon from "../assets/icon-review.png";
@@ -62,7 +63,7 @@ const AppDetails = () => {
         <div className="flex flex-col lg:flex-row gap-10 mb-12">
           <div className="flex-shrink-0 flex justify-center">
             <img
-              src={app.image}
+              src={process.env.PUBLIC_URL + "/" + app.image} // ✅ FIXED for Netlify
               alt={app.title}
               className="w-[280px] sm:w-[350px] h-[280px] sm:h-[350px] object-cover rounded-md shadow-md"
             />
@@ -89,10 +90,11 @@ const AppDetails = () => {
             <button
               disabled={installed}
               onClick={handleInstall}
-              className={`w-full sm:w-[239px] h-[52px] flex justify-center items-center gap-2 px-5 py-3 rounded-md font-semibold text-white transition-all ${installed
-                ? "bg-gray-400 cursor-not-allowed"
-                : "bg-[#00D390] hover:scale-105 hover:brightness-95"
-                }`}
+              className={`w-full sm:w-[239px] h-[52px] flex justify-center items-center gap-2 px-5 py-3 rounded-md font-semibold text-white transition-all ${
+                installed
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-[#00D390] hover:scale-105 hover:brightness-95"
+              }`}
             >
               {installed ? "Installed" : `Install Now (${app.size} MB)`}
             </button>
@@ -128,10 +130,9 @@ const AppDetails = () => {
                     style={{ width: `${barWidthPercent}%` }}
                   />
 
-                  {/* Mini Tooltip Card */}
                   {hovered && (
                     <div
-                      style={{ width: `${Math.max(star * 50, 150)}px` }} // minimum 150px width
+                      style={{ width: `${Math.max(star * 50, 150)}px` }}
                       className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-30 bg-gradient-to-br from-purple-400 to-pink-400 text-white shadow-2xl rounded-2xl px-6 py-4 transition-all duration-300"
                     >
                       <div className="flex justify-center items-center gap-2 mb-2">
@@ -153,7 +154,6 @@ const AppDetails = () => {
                       <p className="text-center text-sm sm:text-[14px]">
                         {ratingObj.count} user{ratingObj.count > 1 ? "s" : ""} rated {star} star{star > 1 ? "s" : ""}.
                       </p>
-
                       <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-3 h-3 bg-gradient-to-br from-purple-400 to-pink-400 rotate-45"></div>
                     </div>
                   )}
