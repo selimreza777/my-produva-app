@@ -51,6 +51,7 @@ const TopApps = () => {
       </div>
     </section>
   );
+  
 };
 
 export default TopApps;
