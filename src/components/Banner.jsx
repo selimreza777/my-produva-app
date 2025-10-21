@@ -34,23 +34,25 @@ const Banner = () => {
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 px-6 py-3 border border-gray-300 rounded-[4px] h-[56px] w-[200px] transition hover:opacity-90"
             >
-              <img src={googlePlay} alt="Google Play" className="w-8 h-9" />
-              <span className="text-[#001931] font-semibold text-[20px] leading-[24px] capitalize">
+              <img src={googlePlay} alt="Google Play" className="w-8 h-8" />
+              <span className="text-[#001931] font-semibold text-[20px] leading-[24px] capitalize whitespace-nowrap">
                 Google Play
               </span>
             </a>
+
             <a
               href="https://www.apple.com/app-store/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 px-6 py-3 border border-gray-300 rounded-[4px] h-[56px] w-[200px] transition hover:opacity-90"
             >
-              <img src={appStore} alt="App Store" className="w-8 h-5" />
-              <span className="text-[#001931] font-semibold text-[20px] leading-[24px] capitalize">
+              <img src={appStore} alt="App Store" className="w-8 h-8" />
+              <span className="text-[#001931] font-semibold text-[20px] leading-[24px] capitalize whitespace-nowrap">
                 App Store
               </span>
             </a>
           </div>
+
 
           <div className="mt-5 sm:mt-6 lg:mt-8">
             <img
