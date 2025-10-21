@@ -6,7 +6,7 @@ import ratingIcon from "../assets/rating-ico.png";
 import reviewIcon from "../assets/icon-review.png";
 import errorImg from "../assets/App-Error.png";
 
-// Import all app images from src/assets
+// Import all app images
 import demoApp1 from "../assets/demo-app-1.png";
 import demoApp2 from "../assets/demo-app-2.png";
 import demoApp3 from "../assets/demo-app-3.png";
@@ -24,7 +24,7 @@ import demoApp14 from "../assets/demo-app-14.png";
 import demoApp15 from "../assets/demo-app-15.png";
 import demoApp16 from "../assets/demo-app-16.png";
 
-// Map image filenames to imported images
+// Map images
 const images = {
   "demo-app-1.png": demoApp1,
   "demo-app-2.png": demoApp2,
@@ -50,7 +50,7 @@ const AppDetails = () => {
   const [installed, setInstalled] = useState(false);
   const [hoveredStar, setHoveredStar] = useState(null);
   const [appsData, setAppsData] = useState([]);
-  const [loading, setLoading] = useState(true); // 🔹 Add loading state
+  const [loading, setLoading] = useState(true); // 🔹 loading state
 
   useEffect(() => {
     const fetchApps = async () => {
@@ -67,17 +67,18 @@ const AppDetails = () => {
             (a) => a.id === foundApp?.id
           ) || false
         );
-        setLoading(false); // 🔹 done loading
+
+        setLoading(false); // done loading
       } catch (error) {
         console.error("Error loading apps data:", error);
-        setLoading(false); // 🔹 done loading even on error
+        setLoading(false); // done loading even on error
       }
     };
 
     fetchApps();
   }, [id]);
 
-  // 🔹 Show loading screen before deciding if app exists
+  // 🔹 show loading screen
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen bg-[#F8F6FF]">
@@ -123,13 +124,12 @@ const AppDetails = () => {
 
   return (
     <div className="min-h-screen bg-[#F8F6FF] flex flex-col">
-      {/* ... rest of your component remains unchanged ... */}
-      {/* Paste all your existing JSX below as-is */}
+      {/* ... keep all your existing JSX as-is here ... */}
     </div>
   );
 };
 
-// StatCard and splitDescription remain unchanged
+// StatCard component
 const StatCard = ({ icon, label, value }) => (
   <div className="flex flex-col items-center sm:items-start gap-2">
     <img src={icon} alt={label} className="w-10 h-10" />
@@ -138,6 +138,7 @@ const StatCard = ({ icon, label, value }) => (
   </div>
 );
 
+// Split description
 const splitDescription = (text) => {
   const sentences = text.replace(/[\r\n]+/g, " ").split(". ").filter(Boolean);
   const partSize = Math.ceil(sentences.length / 3);
