@@ -34,7 +34,7 @@ const Banner = () => {
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 px-6 py-3 border border-gray-300 rounded-[4px] h-[56px] w-[200px] transition hover:opacity-90"
             >
-              <img src={googlePlay} alt="Google Play" className="w-8 h-8" />
+              <img src={googlePlay} alt="Google Play" className="w-8 h-9" />
               <span className="text-[#001931] font-semibold text-[20px] leading-[24px] capitalize">
                 Google Play
               </span>
