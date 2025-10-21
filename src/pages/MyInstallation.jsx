@@ -51,21 +51,9 @@ const MyInstallation = () => {
   const [sortOrder, setSortOrder] = useState("high-low");
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  // Load apps: first from localStorage, else fetch JSON from public folder
-  const loadInstalledApps = async () => {
-    const storedApps = JSON.parse(localStorage.getItem("installedApps"));
-    if (storedApps && storedApps.length > 0) {
-      setInstalledApps(storedApps);
-    } else {
-      try {
-        const res = await fetch("/appsData.json");
-        const data = await res.json();
-        localStorage.setItem("installedApps", JSON.stringify(data));
-        setInstalledApps(data);
-      } catch (err) {
-        console.error("Failed to load appsData.json", err);
-      }
-    }
+  const loadInstalledApps = () => {
+    const apps = JSON.parse(localStorage.getItem("installedApps")) || [];
+    setInstalledApps(apps);
   };
 
   useEffect(() => {
