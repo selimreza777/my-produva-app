@@ -12,14 +12,16 @@ const AppCard = ({ app }) => {
       onClick={() => navigate(`/apps/${app.id}`)}
       className="flex flex-col justify-start items-center bg-white border border-gray-200 rounded-md shadow-sm hover:shadow-md cursor-pointer transition-all duration-300 w-full h-[435px] transform hover:-translate-y-2"
     >
+      {/* Image Container */}
       <div className="mt-4 px-4 w-full h-[316px] flex items-center justify-center">
         <img
-          src={`/${app.image}`} // ✅ Vite + Netlify friendly
+          src={process.env.PUBLIC_URL + "/" + app.image} // ✅ Public folder friendly
           alt={app.title}
           className="w-full h-full object-cover rounded-md"
         />
       </div>
 
+      {/* Card Info */}
       <div className="w-full text-left p-4 flex flex-col justify-between flex-1">
         <div>
           <h3 className="text-lg font-semibold text-gray-800 truncate">
@@ -27,6 +29,7 @@ const AppCard = ({ app }) => {
           </h3>
         </div>
 
+        {/* Downloads and Rating */}
         <div className="flex items-center justify-between text-sm text-gray-600">
           <button className="flex items-center justify-center w-[69px] h-[31px] gap-2 px-2 rounded-[4px] bg-[rgba(241,245,232,1)] text-[#00D390] font-inter font-medium text-[16px] leading-[100%] capitalize">
             <img src={downloadIcon} alt="Download" className="w-4 h-4" />
